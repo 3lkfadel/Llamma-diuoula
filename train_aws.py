@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fine-tuning Llama 3.2 3B sur dataset Dioula — version AWS/CUDA
+Fine-tuning Meta-Llama-3.1-8B sur dataset Dioula — version AWS/CUDA
 Compatible : transformers 4.44, peft 0.12, trl 0.9, bitsandbytes 0.43
 """
 
@@ -13,11 +13,10 @@ from datasets import Dataset
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
-    TrainingArguments,
     BitsAndBytesConfig,
 )
 from peft import LoraConfig, TaskType
-from trl import SFTTrainer
+from trl import SFTTrainer, SFTConfig
 
 
 # ── Chargement du JSONL ───────────────────────────────────────
@@ -31,40 +30,71 @@ def load_jsonl(path: str):
     return data
 
 
+# ── Normalisation du format des données ──────────────────────
+# Gère les deux formats possibles :
+#   format A : {"text": "<|begin_of_text|>..."}   ← chaîne prête
+#   format B : {"messages": [{"role":..., "content":...}, ...]}  ← à convertir
+def normalize_dataset(raw: list, tokenizer) -> Dataset:
+    rows = []
+    for item in raw:
+        if "text" in item and isinstance(item["text"], str):
+            rows.append({"text": item["text"]})
+        elif "messages" in item and isinstance(item["messages"], list):
+            try:
+                text = tokenizer.apply_chat_template(
+                    item["messages"],
+                    tokenize=False,
+                    add_generation_prompt=False,
+                )
+            except Exception:
+                # Fallback manuel si le chat template échoue
+                parts = []
+                for m in item["messages"]:
+                    role    = m.get("role", "user")
+                    content = m.get("content", "")
+                    parts.append(
+                        f"<|start_header_id|>{role}<|end_header_id|>\n\n"
+                        f"{content}<|eot_id|>"
+                    )
+                text = "<|begin_of_text|>" + "".join(parts)
+            rows.append({"text": text})
+        else:
+            # Format inconnu — on ignore la ligne
+            continue
+    return Dataset.from_list(rows)
+
+
 # ── Main ──────────────────────────────────────────────────────
 def main():
-    p = argparse.ArgumentParser(description="Fine-tune Llama 3.2 3B sur Dioula (AWS/CUDA)")
+    p = argparse.ArgumentParser(description="Fine-tune Meta-Llama-3.1-8B sur Dioula (AWS/CUDA)")
     p.add_argument("--model",      default="meta-llama/Meta-Llama-3.1-8B-Instruct",
                    help="Modèle HuggingFace ou chemin local")
-    p.add_argument("--train",      default="train.jsonl")
-    p.add_argument("--valid",      default="valid.jsonl")
+    p.add_argument("--train",      default="Data/train.jsonl")
+    p.add_argument("--valid",      default="Data/valid.jsonl")
     p.add_argument("--output",     default="./adapters_aws",
                    help="Dossier de sortie des checkpoints")
     p.add_argument("--iters",      type=int,   default=800,
-                   help="Nombre de steps (800 = équivalent run Mac)")
+                   help="Nombre de steps")
     p.add_argument("--batch-size", type=int,   default=2)
     p.add_argument("--lr",         type=float, default=1e-4)
     p.add_argument("--lora-rank",  type=int,   default=8)
     p.add_argument("--lora-alpha", type=float, default=20.0)
     p.add_argument("--max-seq",    type=int,   default=2048)
     p.add_argument("--hf-token",   default=None,
-                   help="Token HuggingFace pour les modèles privés/gated")
+                   help="Token HuggingFace pour les modèles gated")
     args = p.parse_args()
 
-    # ── Token HuggingFace ─────────────────────────────────────
     hf_kwargs = {}
     if args.hf_token:
         hf_kwargs["token"] = args.hf_token
 
     # ── Info GPU ──────────────────────────────────────────────
     if not torch.cuda.is_available():
-        raise RuntimeError("CUDA non disponible — ce script nécessite un GPU NVIDIA.")
-    gpu_name = torch.cuda.get_device_name(0)
-    vram_gb  = torch.cuda.get_device_properties(0).total_memory / 1e9
-    print(f"GPU  : {gpu_name}")
-    print(f"VRAM : {vram_gb:.1f} GB")
+        raise RuntimeError("CUDA non disponible — GPU NVIDIA requis.")
+    print(f"GPU  : {torch.cuda.get_device_name(0)}")
+    print(f"VRAM : {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
 
-    # ── QLoRA : quantization 4-bit ────────────────────────────
+    # ── QLoRA 4-bit ───────────────────────────────────────────
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -108,16 +138,16 @@ def main():
         bias="none",
     )
 
-    # ── Datasets ──────────────────────────────────────────────
+    # ── Datasets (normalisation automatique du format) ────────
     print(f"\nChargement données : {args.train} / {args.valid}")
-    train_ds = Dataset.from_list(load_jsonl(args.train))
-    valid_ds = Dataset.from_list(load_jsonl(args.valid))
+    train_ds = normalize_dataset(load_jsonl(args.train), tokenizer)
+    valid_ds = normalize_dataset(load_jsonl(args.valid), tokenizer)
     print(f"Train : {len(train_ds)} exemples")
     print(f"Valid : {len(valid_ds)} exemples")
 
-    # ── Arguments d'entraînement ──────────────────────────────
-    use_bf16 = torch.cuda.get_device_capability()[0] >= 8   # Ampere+
-    training_args = TrainingArguments(
+    # ── SFTConfig (nouveau style trl >= 0.9) ─────────────────
+    use_bf16 = torch.cuda.get_device_capability()[0] >= 8
+    sft_config = SFTConfig(
         output_dir=args.output,
         max_steps=args.iters,
         per_device_train_batch_size=args.batch_size,
@@ -130,7 +160,7 @@ def main():
         logging_steps=10,
         eval_steps=100,
         save_steps=100,
-        evaluation_strategy="steps",
+        eval_strategy="steps",          # ← nouveau nom (plus evaluation_strategy)
         save_strategy="steps",
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
@@ -138,19 +168,19 @@ def main():
         optim="paged_adamw_8bit",
         report_to="none",
         dataloader_pin_memory=False,
+        dataset_text_field="text",      # ← dans SFTConfig, pas SFTTrainer
+        max_seq_length=args.max_seq,    # ← idem
+        packing=False,
     )
 
     # ── Trainer ───────────────────────────────────────────────
     trainer = SFTTrainer(
         model=model,
-        args=training_args,
+        args=sft_config,
         train_dataset=train_ds,
         eval_dataset=valid_ds,
         peft_config=lora_config,
         tokenizer=tokenizer,
-        dataset_text_field="text",
-        max_seq_length=args.max_seq,
-        packing=False,
     )
 
     # ── Lancement ─────────────────────────────────────────────
