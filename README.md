@@ -120,7 +120,7 @@ pip install mlx-lm
 python generate_grammar_pairs.py
 
 # 5. Télécharger le modèle (compte HuggingFace requis)
-mlx_lm.convert --hf-path meta-llama/Llama-3.2-3B-Instruct \
+mlx_lm.convert --hf-path meta-llama/Meta-Llama-3.1-8B-Instruct \
     --mlx-path ./llama-3.2-3b-mlx -q
 
 # 6. Lancer le fine-tuning
@@ -134,14 +134,42 @@ mlx_lm.lora \
     --learning-rate 2e-4
 ```
 
-### Sur AWS GPU (Unsloth) — Recommandé
+### Sur AWS GPU — Recommandé
 
 ```bash
-# Instance recommandée : g5.xlarge (A10G 24Go) ~ $1/heure
-pip install unsloth trl datasets transformers
+# Instance recommandée : g5.xlarge (A10G 24 Go) — requis pour 8B en QLoRA
+# AMI : Deep Learning AMI Ubuntu 22.04
 
-# Lancer le fine-tuning complet (20 000 steps ~ 45 min)
-python finetune_aws.py --iters 20000
+# 1. Cloner le repo
+git clone https://github.com/3lkfadel/Llamma-diuoula.git
+cd Llamma-diuoula
+
+# 2. Installer TOUTES les dépendances (PyTorch + CUDA + HuggingFace)
+chmod +x setup_aws.sh
+./setup_aws.sh
+
+# 3. Token HuggingFace (requis pour Llama 3.2 gated)
+#    → Créer un token sur https://huggingface.co/settings/tokens
+#    → Accepter la licence sur https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct
+export HF_TOKEN="hf_xxxxxxxxxxxxxxxxxxxx"
+
+# 4. Lancer le fine-tuning
+python train_aws.py \
+  --model meta-llama/Meta-Llama-3.1-8B-Instruct \
+  --train train.jsonl \
+  --valid valid.jsonl \
+  --output ./adapters_aws \
+  --iters 800 \
+  --hf-token $HF_TOKEN
+
+# Pour un meilleur score (recommandé) :
+python train_aws.py --iters 1500 --hf-token $HF_TOKEN
+
+# 5. Benchmark après fine-tuning
+python benchmark_aws.py \
+  --model meta-llama/Meta-Llama-3.1-8B-Instruct \
+  --adapter ./adapters_aws/final \
+  --hf-token $HF_TOKEN
 ```
 
 ---

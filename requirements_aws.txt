@@ -1,0 +1,17 @@
+# Versions exactes testées ensemble – ne pas changer les numéros
+
+numpy==1.26.4
+packaging==24.1
+huggingface_hub==0.24.7
+tokenizers==0.19.1
+transformers==4.44.2
+datasets==2.21.0
+accelerate==0.34.2
+peft==0.12.0
+trl==0.9.6
+bitsandbytes==0.43.3
+scipy==1.13.1
+einops==0.8.0
+sentencepiece==0.2.0
+protobuf==4.25.4
+safetensors==0.4.4
