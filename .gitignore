@@ -1,0 +1,58 @@
+# ── Environnements Python ────────────────────────────────────
+env/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+.Python
+
+# ── Modèle de base (télécharger depuis HuggingFace) ──────────
+llama-3.2-3b-mlx/
+llama-3.2-3b/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# ── Adaptateurs LoRA (générés par le fine-tuning) ────────────
+# Utilise Git LFS si tu veux les versionner :
+#   git lfs track "adapters/*.safetensors"
+adapters/
+output/
+checkpoints/
+
+# ── Logs & rapports temporaires ──────────────────────────────
+*.log
+wandb/
+runs/
+mlruns/
+benchmark_report.json
+
+# ── Secrets & config locaux ──────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── macOS ─────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── IDE ───────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── HuggingFace cache ─────────────────────────────────────────
+.cache/

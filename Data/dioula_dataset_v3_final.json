@@ -1,0 +1,3451 @@
+{
+  "meta": {
+    "version": "3.0_final",
+    "langue": "Dioula (Julakan) — Côte d'Ivoire",
+    "description": "Dataset fusionné : sources académiques (v1) + GPT-4o (OpenAI)",
+    "sources": [
+      "Wikipedia Dyula language",
+      "Bambara language Wikipedia",
+      "Peace Corps Bambara Manual",
+      "An ka taa dictionary (dictionary.ankataa.com)",
+      "Denis Creissels - Bambara argument structure",
+      "Omniglot - Dioula phonology",
+      "GPT-4o OpenAI (base-openai 1/2/3 + vocabulaire)"
+    ],
+    "stats": {
+      "total_regles_grammaire": 24,
+      "total_vocabulaire": 210,
+      "total_paires_entrainement": 169,
+      "mots_a_verifier": 0,
+      "note": "Tous les flags à_vérifier ont été acceptés en v3"
+    },
+    "legende": {
+      "a_verifier": "Entrée à valider par un locuteur natif",
+      "conflit_sources": "Les deux sources donnent des traductions différentes — priorité donnée à v1_academique",
+      "source": "v1_academique = sources linguistiques académiques | oai = OpenAI GPT-4o"
+    }
+  },
+  "phonologie": {
+    "description": "Système phonologique du Dioula de Côte d'Ivoire",
+    "voyelles": {
+      "simples": [
+        "a",
+        "e",
+        "ɛ",
+        "i",
+        "o",
+        "ɔ",
+        "u"
+      ],
+      "longues": {
+        "description": "Les voyelles longues sont représentées par doublement de la lettre",
+        "exemples": [
+          {
+            "court": "e",
+            "long": "ee",
+            "exemple_court": "ke (faire)",
+            "exemple_long": "keen (?)"
+          },
+          {
+            "court": "o",
+            "long": "oo"
+          }
+        ]
+      },
+      "nasales": {
+        "description": "La nasalisation s'écrit avec un 'n' après la voyelle",
+        "exemple": "en = /ẽ/"
+      }
+    },
+    "consonnes_speciales": {
+      "g_entre_voyelles": "Quand G apparaît entre deux voyelles a, o, ɔ — il se prononce [ʀ] ou [ɣ]",
+      "n_velarisee": "ŋ = n vélaire (comme dans 'parking')"
+    },
+    "tons": {
+      "description": "Le Dioula est une langue tonale à 2 tons. Le ton change le sens du mot.",
+      "types": [
+        {
+          "nom": "Ton haut",
+          "notation": "accent aigu ó",
+          "description": "Voix qui monte"
+        },
+        {
+          "nom": "Ton bas",
+          "notation": "accent grave ò",
+          "description": "Voix qui reste basse"
+        }
+      ],
+      "importance": "CRITIQUE — le même mot avec des tons différents = sens différents",
+      "note_pratique": "En écriture courante, les tons ne sont souvent pas marqués. Le contexte aide."
+    },
+    "sons_specifiques": [
+      {
+        "lettre": "ɛ",
+        "description": "voyelle ouverte comme 'è'"
+      },
+      {
+        "lettre": "ɔ",
+        "description": "voyelle ouverte comme 'o' grave"
+      },
+      {
+        "lettre": "ŋ",
+        "description": "son nasal comme 'ng'"
+      }
+    ],
+    "prononciation_guide": {
+      "a": "a comme 'papa'",
+      "e": "é ou è selon ton",
+      "i": "i comme 'si'",
+      "o": "o fermé ou ouvert",
+      "u": "ou comme 'sou'"
+    },
+    "rythme": {
+      "description": "langue syllabique régulière",
+      "impact": "chaque syllabe est prononcée clairement"
+    }
+  },
+  "grammaire": [
+    {
+      "id": "G001",
+      "regle": "Ordre des mots — Structure de base SOV",
+      "description": "Le Dioula est une langue SOV (Sujet + Objet + Verbe), contrairement au français SVO (Sujet + Verbe + Objet)",
+      "structure": "Sujet + [Auxiliaire] + Objet + Verbe",
+      "comparaison": {
+        "francais": "Je (S) mange (V) du riz (O)",
+        "dioula": "Ne (S) bɛ (AUX) malo (O) dumu (V)"
+      },
+      "exemples": [
+        {
+          "francais": "Je mange du riz",
+          "dioula": "Ne bɛ malo dumu",
+          "glose": "Je [présent] riz manger"
+        },
+        {
+          "francais": "Il boit de l'eau",
+          "dioula": "A bɛ ji min",
+          "glose": "Il [présent] eau boire"
+        },
+        {
+          "francais": "Elle achète du tissu",
+          "dioula": "A bɛ fini san",
+          "glose": "Elle [présent] tissu acheter"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G002",
+      "regle": "Les auxiliaires aspectuels — Présent affirmatif",
+      "description": "L'auxiliaire 'bɛ' marque le présent/imparfait affirmatif. Il se place entre le sujet et l'objet.",
+      "marqueur": "bɛ",
+      "exemples": [
+        {
+          "francais": "Je travaille",
+          "dioula": "Ne bɛ baara kɛ",
+          "glose": "Je [bɛ] travail faire"
+        },
+        {
+          "francais": "Tu vas au marché",
+          "dioula": "I bɛ taa sugu la",
+          "glose": "Tu [bɛ] aller marché à"
+        },
+        {
+          "francais": "Nous étudions",
+          "dioula": "An bɛ kalan",
+          "glose": "Nous [bɛ] étudier"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G003",
+      "regle": "Les auxiliaires aspectuels — Présent négatif",
+      "description": "L'auxiliaire 'tɛ' marque le présent/imparfait négatif. C'est la négation de 'bɛ'.",
+      "marqueur": "tɛ",
+      "exemples": [
+        {
+          "francais": "Je ne travaille pas",
+          "dioula": "Ne tɛ baara kɛ",
+          "glose": "Je [tɛ] travail faire"
+        },
+        {
+          "francais": "Il ne mange pas",
+          "dioula": "A tɛ dumu",
+          "glose": "Il [tɛ] manger"
+        },
+        {
+          "francais": "Nous ne parlons pas dioula",
+          "dioula": "An tɛ julakan kumana",
+          "glose": "Nous [tɛ] dioula parler"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G004",
+      "regle": "Les auxiliaires aspectuels — Passé affirmatif",
+      "description": "Le passé affirmatif est marqué par 'yé' (avant le verbe). Le verbe prend parfois un suffixe -la/-ra/-na selon sa phonologie.",
+      "marqueur": "yé ... [-la/-ra/-na]",
+      "exemples": [
+        {
+          "francais": "Il est allé au marché",
+          "dioula": "A taara sugu la",
+          "note": "taara = taa (aller) + ra (suffixe passé)"
+        },
+        {
+          "francais": "J'ai mangé",
+          "dioula": "Ne ye dumu",
+          "glose": "Je [yé] manger"
+        },
+        {
+          "francais": "Elle a acheté du riz",
+          "dioula": "A ye malo san",
+          "glose": "Elle [yé] riz acheter"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G005",
+      "regle": "Les auxiliaires aspectuels — Futur affirmatif",
+      "description": "Le futur affirmatif est marqué par 'bɛna' (contraction de bɛ + na).",
+      "marqueur": "bɛna",
+      "exemples": [
+        {
+          "francais": "Je vais aller demain",
+          "dioula": "Ne bɛna taa sini",
+          "glose": "Je [bɛna] aller demain"
+        },
+        {
+          "francais": "Il va acheter une voiture",
+          "dioula": "A bɛna mobili san",
+          "glose": "Il [bɛna] voiture acheter"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G006",
+      "regle": "Les postpositions (pas de prépositions)",
+      "description": "Comme toutes les langues SOV, le Dioula utilise des postpositions (après le nom), non des prépositions (avant le nom).",
+      "postpositions_communes": [
+        {
+          "dioula": "la/na",
+          "sens": "à, dans, en (lieu)",
+          "exemple": "sugu la = au marché"
+        },
+        {
+          "dioula": "fɛ",
+          "sens": "avec, chez, auprès de",
+          "exemple": "ne fɛ = chez moi / avec moi"
+        },
+        {
+          "dioula": "kɔ",
+          "sens": "derrière, après",
+          "exemple": "so kɔ = derrière la maison"
+        },
+        {
+          "dioula": "ɲɛ",
+          "sens": "devant",
+          "exemple": "so ɲɛ = devant la maison"
+        },
+        {
+          "dioula": "kan",
+          "sens": "sur",
+          "exemple": "tɔ kan = sur la table"
+        },
+        {
+          "dioula": "bolo",
+          "sens": "à la main de, possession",
+          "exemple": "wari bolo = avoir de l'argent"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G007",
+      "regle": "Le genre — Pas de genre grammatical",
+      "description": "Le Dioula n'a PAS de genre grammatical (pas de masculin/féminin comme en français). Le genre se précise avec des suffixes.",
+      "suffixes_genre": [
+        {
+          "suffixe": "-ce ou -ke",
+          "sens": "masculin",
+          "exemple": "denmisɛnce = garçon (jeune homme)"
+        },
+        {
+          "suffixe": "-muso",
+          "sens": "féminin",
+          "exemple": "denmisɛnmuso = fille (jeune femme)"
+        }
+      ],
+      "exemples": [
+        {
+          "francais": "un chat mâle",
+          "dioula": "jakuma-ke"
+        },
+        {
+          "francais": "une chatte",
+          "dioula": "jakuma-muso"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G008",
+      "regle": "Le pluriel",
+      "description": "Le pluriel se forme en ajoutant le suffixe '-w' au nom.",
+      "exemples": [
+        {
+          "singulier_dioula": "mɔgɔ (personne)",
+          "pluriel_dioula": "mɔgɔw (personnes)"
+        },
+        {
+          "singulier_dioula": "so (maison)",
+          "pluriel_dioula": "sow (maisons)"
+        },
+        {
+          "singulier_dioula": "den (enfant)",
+          "pluriel_dioula": "denw (enfants)"
+        },
+        {
+          "singulier_dioula": "jiri (arbre)",
+          "pluriel_dioula": "jiriw (arbres)"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G009",
+      "regle": "La copule 'ye' — Être (identification)",
+      "description": "Pour dire 'X est Y' (identification, définition), on utilise 'ye' après X et avant Y.",
+      "structure": "X ye Y ye",
+      "exemples": [
+        {
+          "francais": "Je suis un étudiant",
+          "dioula": "Ne ye kalandenw ye",
+          "glose": "Je [ye] étudiant [ye]"
+        },
+        {
+          "francais": "Abidjan est une grande ville",
+          "dioula": "Abidjan ye dugu ba ye",
+          "glose": "Abidjan [ye] ville grande [ye]"
+        },
+        {
+          "francais": "Il n'est pas un commerçant",
+          "dioula": "A tɛ jula ye",
+          "note": "Négatif : tɛ remplace 'ye ... ye'"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G010",
+      "regle": "Les questions — Structure interrogative",
+      "description": "Les questions se forment avec des particules interrogatives. 'wa' en fin de phrase pour oui/non. Mots interrogatifs en début ou fin.",
+      "mots_interrogatifs": [
+        {
+          "dioula": "mun",
+          "sens": "quoi / que",
+          "exemple": "I bɛ mun kɛ ? = Que fais-tu ?"
+        },
+        {
+          "dioula": "jɔn",
+          "sens": "qui",
+          "exemple": "Jɔn bɛ yan ? = Qui est là ?"
+        },
+        {
+          "dioula": "min",
+          "sens": "lequel / qui (relatif)",
+          "exemple": ""
+        },
+        {
+          "dioula": "di",
+          "sens": "quel (dans les questions de type 'quel est')",
+          "exemple": "I tɔgɔ di ? = Quel est ton nom ?"
+        },
+        {
+          "dioula": "wa",
+          "sens": "oui/non (en fin de phrase)",
+          "exemple": "I ka kɛnɛ wa ? = Est-ce que tu vas bien ?"
+        },
+        {
+          "dioula": "cogodɔ",
+          "sens": "comment",
+          "exemple": "I ka cogodɔ ? = Comment vas-tu ?"
+        },
+        {
+          "dioula": "yɔrɔ di",
+          "sens": "où",
+          "exemple": "Sugu bɛ yɔrɔ di ? = Où est le marché ?"
+        },
+        {
+          "dioula": "waati di",
+          "sens": "quand",
+          "exemple": "I bɛna na waati di ? = Quand vas-tu venir ?"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "id": "G011",
+      "regle": "Les pronoms personnels",
+      "description": "Le Dioula n'a pas de distinction de genre dans les pronoms (il/elle = 'a')",
+      "pronoms": [
+        {
+          "francais": "je / me / moi",
+          "dioula": "ne / n"
+        },
+        {
+          "francais": "tu / te / toi",
+          "dioula": "i"
+        },
+        {
+          "francais": "il / elle / le / la / lui",
+          "dioula": "a"
+        },
+        {
+          "francais": "nous",
+          "dioula": "an"
+        },
+        {
+          "francais": "vous",
+          "dioula": "aw"
+        },
+        {
+          "francais": "ils / elles / les / leur",
+          "dioula": "u"
+        }
+      ],
+      "note": "Pas de distinction il/elle — 'a' désigne toute personne singulière non-locutrice",
+      "source": "v1_academique"
+    },
+    {
+      "id": "G012",
+      "regle": "La possession",
+      "description": "La possession se marque avec 'ka' entre le possesseur et l'objet possédé.",
+      "structure": "Possesseur + ka + Objet",
+      "exemples": [
+        {
+          "francais": "ma maison",
+          "dioula": "ne ka so"
+        },
+        {
+          "francais": "ton père",
+          "dioula": "i ka fa"
+        },
+        {
+          "francais": "sa mère",
+          "dioula": "a ka ba"
+        },
+        {
+          "francais": "notre école",
+          "dioula": "an ka kalanso"
+        },
+        {
+          "francais": "leur voiture",
+          "dioula": "u ka mobili"
+        }
+      ],
+      "source": "v1_academique"
+    },
+    {
+      "regle": "Phrase affirmative",
+      "structure": "Sujet + Objet + Verbe",
+      "exemple_dioula": "Ne dô dumu",
+      "exemple_français": "Je mange du riz",
+      "notes": "Le verbe se place en fin de phrase",
+      "source": "oai1"
+    },
+    {
+      "regle": "Phrase négative",
+      "structure": "Sujet + Objet + tɛ + Verbe",
+      "exemple_dioula": "Ne dô tɛ dumu",
+      "exemple_français": "Je ne mange pas de riz",
+      "notes": "Le marqueur 'tɛ' exprime la négation",
+      "source": "oai1"
+    },
+    {
+      "regle": "Phrase interrogative",
+      "structure": "Phrase + wa ?",
+      "exemple_dioula": "I ka kènè wa ?",
+      "exemple_français": "Est-ce que tu vas bien ?",
+      "notes": "Le marqueur 'wa' indique une question",
+      "source": "oai1"
+    },
+    {
+      "regle": "Temps présent",
+      "structure": "Sujet + Objet + Verbe",
+      "exemple_dioula": "A buku kalan",
+      "exemple_français": "Il lit un livre",
+      "notes": "Pas de marque spécifique du présent",
+      "source": "oai1"
+    },
+    {
+      "regle": "Temps passé",
+      "structure": "Sujet + ye + Objet + Verbe",
+      "exemple_dioula": "Ne ye dô dumu",
+      "exemple_français": "J’ai mangé du riz",
+      "notes": "‘ye’ marque l’accompli",
+      "source": "oai1"
+    },
+    {
+      "regle": "Temps futur",
+      "structure": "Sujet + bɛ + Verbe",
+      "exemple_dioula": "Ne bɛ taa",
+      "exemple_français": "Je vais partir",
+      "notes": "‘bɛ’ indique une action future ou en cours",
+      "source": "oai1"
+    },
+    {
+      "regle": "Accords",
+      "structure": "Invariable",
+      "exemple_dioula": "Den (enfant/enfants)",
+      "exemple_français": "enfant / enfants",
+      "notes": "Pas de genre ni pluriel marqué systématiquement",
+      "source": "oai1"
+    },
+    {
+      "regle": "Tons",
+      "structure": "haut / bas",
+      "exemple_dioula": "ba (mère) vs bá (grand)",
+      "exemple_français": "variation de sens",
+      "notes": "Le ton change le sens",
+      "source": "oai1"
+    },
+    {
+      "regle": "Phrase relative",
+      "structure": "Nom + min + Proposition",
+      "exemple_dioula": "Den min na",
+      "exemple_français": "L’enfant qui est venu",
+      "notes": "‘min’ introduit une relative",
+      "source": "oai3"
+    },
+    {
+      "regle": "Conditionnel",
+      "structure": "Ni + proposition + proposition",
+      "exemple_dioula": "Ni i na, ne di i ma",
+      "exemple_français": "Si tu viens, je te donne",
+      "notes": "‘ni’ signifie ‘si’",
+      "source": "oai3"
+    },
+    {
+      "regle": "But / intention",
+      "structure": "Sujet + taa + ka + Verbe",
+      "exemple_dioula": "Ne taa ka kalan",
+      "exemple_français": "Je vais étudier",
+      "notes": "‘ka’ introduit l’objectif",
+      "source": "oai3"
+    },
+    {
+      "regle": "Obligation",
+      "structure": "Sujet + kan + Verbe",
+      "exemple_dioula": "I kan taa",
+      "exemple_français": "Tu dois partir",
+      "notes": "‘kan’ exprime la nécessité",
+      "source": "oai3"
+    }
+  ],
+  "vocabulaire": [
+    {
+      "français": "bonjour",
+      "dioula": "i ni ce",
+      "phonétique": "i ni tché",
+      "ton": "bas-haut",
+      "exemple_phrase": "I ni ce",
+      "source": "oai1",
+      "categorie": "salutations"
+    },
+    {
+      "français": "merci",
+      "dioula": "i ni che",
+      "phonétique": "i ni tché",
+      "ton": "bas",
+      "exemple_phrase": "I ni che",
+      "source": "oai1",
+      "categorie": "salutations"
+    },
+    {
+      "français": "oui",
+      "dioula": "awo",
+      "phonétique": "a-wo",
+      "ton": "bas",
+      "exemple_phrase": "Awo",
+      "source": "oai1",
+      "categorie": "salutations"
+    },
+    {
+      "français": "non",
+      "dioula": "ayi",
+      "phonétique": "a-yi",
+      "ton": "bas",
+      "exemple_phrase": "Ayi",
+      "source": "oai1",
+      "categorie": "salutations"
+    },
+    {
+      "français": "manger",
+      "dioula": "dumu",
+      "phonétique": "dou-mou",
+      "ton": "bas",
+      "exemple_phrase": "Ne dô dumu",
+      "source": "oai1",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "boire",
+      "dioula": "min",
+      "phonétique": "mine",
+      "ton": "haut",
+      "exemple_phrase": "Ne ji min",
+      "source": "oai1",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "aller",
+      "dioula": "taa",
+      "phonétique": "ta",
+      "ton": "haut",
+      "exemple_phrase": "Ne taa",
+      "source": "oai1",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "venir",
+      "dioula": "na",
+      "phonétique": "na",
+      "ton": "bas",
+      "exemple_phrase": "A na",
+      "source": "oai1",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "voir",
+      "dioula": "ye",
+      "phonétique": "yé",
+      "ton": "haut",
+      "exemple_phrase": "Ne i ye",
+      "source": "oai1",
+      "categorie": "salutations"
+    },
+    {
+      "français": "aimer",
+      "dioula": "kanu",
+      "phonétique": "ka-nou",
+      "ton": "bas",
+      "exemple_phrase": "Ne i kanu",
+      "source": "oai1",
+      "categorie": "divers"
+    },
+    {
+      "français": "un",
+      "dioula": "kelen",
+      "phonétique": "ké-len",
+      "ton": "haut",
+      "exemple_phrase": "kelen",
+      "source": "oai1",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "deux",
+      "dioula": "fila",
+      "phonétique": "fi-la",
+      "ton": "bas",
+      "exemple_phrase": "fila",
+      "source": "oai1",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "trois",
+      "dioula": "saba",
+      "phonétique": "sa-ba",
+      "ton": "bas",
+      "exemple_phrase": "saba",
+      "source": "oai1",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "quatre",
+      "dioula": "naani",
+      "phonétique": "naa-ni",
+      "ton": "bas",
+      "exemple_phrase": "naani",
+      "source": "oai1",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "cinq",
+      "dioula": "duuru",
+      "phonétique": "dou-rou",
+      "ton": "bas",
+      "exemple_phrase": "duuru",
+      "source": "oai1",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "rouge",
+      "dioula": "wula",
+      "phonétique": "wou-la",
+      "ton": "bas",
+      "exemple_phrase": "fini wula",
+      "source": "oai1",
+      "categorie": "couleurs"
+    },
+    {
+      "français": "noir",
+      "dioula": "fin",
+      "phonétique": "fine",
+      "ton": "haut",
+      "exemple_phrase": "fini fin",
+      "source": "oai1",
+      "categorie": "couleurs"
+    },
+    {
+      "français": "blanc",
+      "dioula": "jɛ",
+      "phonétique": "djɛ",
+      "ton": "haut",
+      "exemple_phrase": "fini jɛ",
+      "source": "oai1",
+      "categorie": "couleurs"
+    },
+    {
+      "français": "père",
+      "dioula": "fa",
+      "phonétique": "fa",
+      "ton": "haut",
+      "exemple_phrase": "Ne fa",
+      "source": "oai1",
+      "categorie": "famille"
+    },
+    {
+      "français": "mère",
+      "dioula": "ba",
+      "phonétique": "ba",
+      "ton": "bas",
+      "exemple_phrase": "Ne ba",
+      "source": "oai1",
+      "categorie": "famille"
+    },
+    {
+      "français": "enfant",
+      "dioula": "den",
+      "phonétique": "dèn",
+      "ton": "bas",
+      "exemple_phrase": "den",
+      "source": "oai1",
+      "categorie": "famille"
+    },
+    {
+      "français": "main",
+      "dioula": "bolo",
+      "phonétique": "bo-lo",
+      "ton": "bas",
+      "exemple_phrase": "bolo",
+      "source": "oai1",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "tête",
+      "dioula": "kun",
+      "phonétique": "koun",
+      "ton": "haut",
+      "exemple_phrase": "kun",
+      "source": "oai1",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "acheter",
+      "dioula": "san",
+      "phonétique": "san",
+      "ton": "haut",
+      "exemple_phrase": "Ne san",
+      "source": "oai1",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "vendre",
+      "dioula": "feere",
+      "phonétique": "fé-ré",
+      "ton": "haut",
+      "exemple_phrase": "A feere",
+      "source": "oai1",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "grand",
+      "dioula": "ba",
+      "phonétique": "ba",
+      "ton": "haut",
+      "exemple_phrase": "so ba",
+      "source": "oai1",
+      "categorie": "famille"
+    },
+    {
+      "français": "petit",
+      "dioula": "den",
+      "phonétique": "dèn",
+      "ton": "bas",
+      "exemple_phrase": "so den",
+      "source": "oai1",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "marché",
+      "dioula": "suugu",
+      "phonétique": "suu-gou",
+      "ton": "bas",
+      "exemple_phrase": "Ne taa suugu",
+      "source": "oai3",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "poisson",
+      "dioula": "jɛgɛ",
+      "phonétique": "djɛ-gɛ",
+      "ton": "bas",
+      "exemple_phrase": "Ne jɛgɛ san",
+      "source": "oai3",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "viande",
+      "dioula": "sogo",
+      "phonétique": "so-go",
+      "ton": "bas",
+      "exemple_phrase": "Ne sogo dumu",
+      "source": "oai3",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "pain",
+      "dioula": "buru",
+      "phonétique": "bou-rou",
+      "ton": "bas",
+      "exemple_phrase": "Ne buru dumu",
+      "source": "oai3",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "lait",
+      "dioula": "nɔgɔ",
+      "phonétique": "nɔ-gɔ",
+      "ton": "bas",
+      "exemple_phrase": "Ne nɔgɔ min",
+      "source": "oai3",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "jambe",
+      "dioula": "sen",
+      "phonétique": "sèn",
+      "ton": "bas",
+      "exemple_phrase": "Sen bɛ ne la",
+      "source": "oai3",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "œil",
+      "dioula": "nya",
+      "phonétique": "nya",
+      "ton": "bas",
+      "exemple_phrase": "Nya bɛ ne la",
+      "source": "oai3",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "bouche",
+      "dioula": "da",
+      "phonétique": "da",
+      "ton": "bas",
+      "exemple_phrase": "Da",
+      "source": "oai3",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "parler",
+      "dioula": "fɔ",
+      "phonétique": "fɔ",
+      "ton": "haut",
+      "exemple_phrase": "A bɛ fɔ",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "écouter",
+      "dioula": "mɛn",
+      "phonétique": "mɛn",
+      "ton": "bas",
+      "exemple_phrase": "I mɛn",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "écrire",
+      "dioula": "sɛbɛn",
+      "phonétique": "sɛ-bɛn",
+      "ton": "bas",
+      "exemple_phrase": "Ne sɛbɛn",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "lire",
+      "dioula": "kalan",
+      "phonétique": "ka-lan",
+      "ton": "bas",
+      "exemple_phrase": "Ne kalan",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "courir",
+      "dioula": "bɔ",
+      "phonétique": "bɔ",
+      "ton": "haut",
+      "exemple_phrase": "A bɔ",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "dormir",
+      "dioula": "sunɔ",
+      "phonétique": "sou-nɔ",
+      "ton": "bas",
+      "exemple_phrase": "Ne sunɔ",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "travailler",
+      "dioula": "baara kɛ",
+      "phonétique": "baa-ra kɛ",
+      "ton": "bas",
+      "exemple_phrase": "Ne bɛ baara kɛ",
+      "source": "oai3",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "beau",
+      "dioula": "cɛɲɛ",
+      "phonétique": "tchɛ-nyɛ",
+      "ton": "bas",
+      "exemple_phrase": "A cɛɲɛ",
+      "source": "oai3",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "laid",
+      "dioula": "juguman",
+      "phonétique": "jou-gou-man",
+      "ton": "bas",
+      "exemple_phrase": "A juguman",
+      "source": "oai3",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "bon",
+      "dioula": "di",
+      "phonétique": "di",
+      "ton": "haut",
+      "exemple_phrase": "A di",
+      "source": "oai3",
+      "categorie": "salutations"
+    },
+    {
+      "français": "mauvais",
+      "dioula": "jugu",
+      "phonétique": "jou-gou",
+      "ton": "bas",
+      "exemple_phrase": "A jugu",
+      "source": "oai3",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "six",
+      "dioula": "worɔ",
+      "phonétique": "wo-rɔ",
+      "ton": "bas",
+      "exemple_phrase": "worɔ",
+      "source": "oai3",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "sept",
+      "dioula": "wolonfila",
+      "phonétique": "wo-lon-fi-la",
+      "ton": "bas",
+      "exemple_phrase": "wolonfila",
+      "source": "oai3",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "huit",
+      "dioula": "segin",
+      "phonétique": "se-gin",
+      "ton": "bas",
+      "exemple_phrase": "segin",
+      "source": "oai3",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "neuf",
+      "dioula": "kɔnɔntɔn",
+      "phonétique": "kɔ-nɔn-tɔn",
+      "ton": "bas",
+      "exemple_phrase": "kɔnɔntɔn",
+      "source": "oai3",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "dix",
+      "dioula": "tan",
+      "phonétique": "tan",
+      "ton": "haut",
+      "exemple_phrase": "tan",
+      "source": "oai3",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "homme",
+      "dioula": "cɛ",
+      "phonétique": "tchè",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "femme",
+      "dioula": "muso",
+      "phonétique": "mou-so",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "famille"
+    },
+    {
+      "français": "ami",
+      "dioula": "teriya",
+      "phonétique": "té-ri-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "famille"
+    },
+    {
+      "français": "ennemi",
+      "dioula": "janfa",
+      "phonétique": "jan-fa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "chef",
+      "dioula": "masa",
+      "phonétique": "ma-sa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "roi",
+      "dioula": "mansa",
+      "phonétique": "man-sa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "travailleur",
+      "dioula": "baaraden",
+      "phonétique": "baa-ra-den",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "enseignant",
+      "dioula": "kalanfa",
+      "phonétique": "ka-lan-fa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "élève",
+      "dioula": "kalanden",
+      "phonétique": "ka-lan-den",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "médecin",
+      "dioula": "dokotor",
+      "phonétique": "do-ko-tor",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "soleil",
+      "dioula": "tile",
+      "phonétique": "ti-lé",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "lune",
+      "dioula": "kalo",
+      "phonétique": "ka-lo",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "étoile",
+      "dioula": "sira",
+      "phonétique": "si-ra",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "ciel",
+      "dioula": "san",
+      "phonétique": "san",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "terre",
+      "dioula": "dugu",
+      "phonétique": "dou-gou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "feu",
+      "dioula": "tasuma",
+      "phonétique": "ta-sou-ma",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "air",
+      "dioula": "fɛn",
+      "phonétique": "fɛn",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "chien",
+      "dioula": "wulu",
+      "phonétique": "wou-lou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "animaux"
+    },
+    {
+      "français": "chat",
+      "dioula": "jakuma",
+      "phonétique": "ja-kou-ma",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "animaux"
+    },
+    {
+      "français": "vache",
+      "dioula": "nagɔ",
+      "phonétique": "na-gɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "animaux"
+    },
+    {
+      "français": "chèvre",
+      "dioula": "bila",
+      "phonétique": "bi-la",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "animaux"
+    },
+    {
+      "français": "mouton",
+      "dioula": "saga",
+      "phonétique": "sa-ga",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "animaux"
+    },
+    {
+      "français": "poule",
+      "dioula": "kɔkɔrɔ",
+      "phonétique": "kɔ-kɔ-rɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "animaux"
+    },
+    {
+      "français": "oiseau",
+      "dioula": "kɔnɔ",
+      "phonétique": "kɔ-nɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "route",
+      "dioula": "sira",
+      "phonétique": "si-ra",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "lieux"
+    },
+    {
+      "français": "voiture",
+      "dioula": "mobili",
+      "phonétique": "mo-bi-li",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "transport"
+    },
+    {
+      "français": "vélo",
+      "dioula": "velo",
+      "phonétique": "vé-lo",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "transport"
+    },
+    {
+      "français": "ville",
+      "dioula": "dugu",
+      "phonétique": "dou-gou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "lieux"
+    },
+    {
+      "français": "quartier",
+      "dioula": "kono",
+      "phonétique": "ko-no",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "lieux"
+    },
+    {
+      "français": "ouvrir",
+      "dioula": "da",
+      "phonétique": "da",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "fermer",
+      "dioula": "da tugu",
+      "phonétique": "da tou-gou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "marcher",
+      "dioula": "taa",
+      "phonétique": "ta",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "s’asseoir",
+      "dioula": "sigida",
+      "phonétique": "si-gi-da",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "divers"
+    },
+    {
+      "français": "se lever",
+      "dioula": "kelen",
+      "phonétique": "ké-len",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "regarder",
+      "dioula": "ye",
+      "phonétique": "yé",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "comprendre",
+      "dioula": "faamu",
+      "phonétique": "faa-mou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "apprendre",
+      "dioula": "kalan",
+      "phonétique": "ka-lan",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "enseigner",
+      "dioula": "kalan di",
+      "phonétique": "ka-lan di",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "chaud",
+      "dioula": "tileya",
+      "phonétique": "ti-lé-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "froid",
+      "dioula": "suma",
+      "phonétique": "sou-ma",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "dur",
+      "dioula": "gɛlɛn",
+      "phonétique": "gɛ-lɛn",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "facile",
+      "dioula": "nɔgɔya",
+      "phonétique": "nɔ-gɔ-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "plein",
+      "dioula": "fa",
+      "phonétique": "fa",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "vide",
+      "dioula": "kɔrɔ",
+      "phonétique": "kɔ-rɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adjectifs"
+    },
+    {
+      "français": "toujours",
+      "dioula": "tuma bɛɛ",
+      "phonétique": "tou-ma bɛɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "temps"
+    },
+    {
+      "français": "souvent",
+      "dioula": "dɔɔnin dɔɔnin",
+      "phonétique": "dɔɔ-nin",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "temps"
+    },
+    {
+      "français": "jamais",
+      "dioula": "tuma si",
+      "phonétique": "tou-ma si",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "temps"
+    },
+    {
+      "français": "maintenant",
+      "dioula": "sisan",
+      "phonétique": "si-san",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "hier",
+      "dioula": "kunu",
+      "phonétique": "kou-nou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "temps"
+    },
+    {
+      "français": "demain",
+      "dioula": "sini",
+      "phonétique": "si-ni",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "corps_humain"
+    },
+    {
+      "français": "ouvrir la porte",
+      "dioula": "da da",
+      "phonétique": "da da",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "fermer la porte",
+      "dioula": "da tugu",
+      "phonétique": "da tou-gou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "prendre eau",
+      "dioula": "ji ta",
+      "phonétique": "dji ta",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "boire eau",
+      "dioula": "ji min",
+      "phonétique": "dji min",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "manger riz",
+      "dioula": "dô dumu",
+      "phonétique": "do dou-mou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "un peu",
+      "dioula": "dɔɔnin",
+      "phonétique": "dɔɔ-nin",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "beaucoup",
+      "dioula": "kosɛbɛ",
+      "phonétique": "ko-sɛ-bɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "tout",
+      "dioula": "bɛɛ",
+      "phonétique": "bɛɛ",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "rien",
+      "dioula": "fɛn si",
+      "phonétique": "fɛn si",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "ouvrir les yeux",
+      "dioula": "nya da",
+      "phonétique": "nya da",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "fermer les yeux",
+      "dioula": "nya tugu",
+      "phonétique": "nya tou-gou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "verbes_courants"
+    },
+    {
+      "français": "parce que",
+      "dioula": "kɔni",
+      "phonétique": "kɔ-ni",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "mais",
+      "dioula": "nka",
+      "phonétique": "n-ka",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "lieux"
+    },
+    {
+      "français": "et",
+      "dioula": "ani",
+      "phonétique": "a-ni",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "ou",
+      "dioula": "wala",
+      "phonétique": "wa-la",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "salutations"
+    },
+    {
+      "français": "argent",
+      "dioula": "wari",
+      "phonétique": "wa-ri",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "prix",
+      "dioula": "jɔgɔ",
+      "phonétique": "djo-gɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "payer",
+      "dioula": "wari di",
+      "phonétique": "wa-ri di",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "coût",
+      "dioula": "nafa",
+      "phonétique": "na-fa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "profit",
+      "dioula": "nafa",
+      "phonétique": "na-fa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "perte",
+      "dioula": "bɔn",
+      "phonétique": "bɔn",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "marché financier",
+      "dioula": "suugu wari",
+      "phonétique": "suu-gou wa-ri",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nourriture"
+    },
+    {
+      "français": "banque",
+      "dioula": "banaki",
+      "phonétique": "ba-na-ki",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "compte bancaire",
+      "dioula": "wari kɛlɛ",
+      "phonétique": "wa-ri kɛ-lɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "nature"
+    },
+    {
+      "français": "investir",
+      "dioula": "wari don",
+      "phonétique": "wa-ri don",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "investissement",
+      "dioula": "wari donya",
+      "phonétique": "wa-ri don-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "divers"
+    },
+    {
+      "français": "économie",
+      "dioula": "nafa fɛnw",
+      "phonétique": "na-fa fɛn",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "budget",
+      "dioula": "wari jate",
+      "phonétique": "wa-ri ja-té",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "revenu",
+      "dioula": "nafa sɔrɔ",
+      "phonétique": "na-fa sɔ-rɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "dépense",
+      "dioula": "wari bɔ",
+      "phonétique": "wa-ri bɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "épargner",
+      "dioula": "wari mara",
+      "phonétique": "wa-ri ma-ra",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "épargne",
+      "dioula": "wari maraya",
+      "phonétique": "wa-ri ma-ra-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "crédit",
+      "dioula": "wari jɔya",
+      "phonétique": "wa-ri djo-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "dette",
+      "dioula": "jɔya",
+      "phonétique": "djo-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "intérêt (finance)",
+      "dioula": "nafa fara",
+      "phonétique": "na-fa fa-ra",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "entreprise",
+      "dioula": "baara so",
+      "phonétique": "baa-ra so",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "entrepreneur",
+      "dioula": "baara kɛla",
+      "phonétique": "baa-ra kɛ-la",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "projet",
+      "dioula": "baara",
+      "phonétique": "baa-ra",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "objectif",
+      "dioula": "laɲini",
+      "phonétique": "la-nyi-ni",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "gestion",
+      "dioula": "ɲɛnabɔ",
+      "phonétique": "nya-na-bɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "diriger",
+      "dioula": "ɲɛnabɔ",
+      "phonétique": "nya-na-bɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "client",
+      "dioula": "sonfɛnw",
+      "phonétique": "son-fɛn",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "service",
+      "dioula": "baarakɛ",
+      "phonétique": "baa-ra-kɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "produit",
+      "dioula": "fɛn",
+      "phonétique": "fɛn",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "vente",
+      "dioula": "feere",
+      "phonétique": "fé-ré",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "négocier",
+      "dioula": "mafi",
+      "phonétique": "ma-fi",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "contrat",
+      "dioula": "kan fɔ",
+      "phonétique": "kan fɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "accord",
+      "dioula": "kan",
+      "phonétique": "kan",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "salutations"
+    },
+    {
+      "français": "stratégie",
+      "dioula": "fɔɲɛ",
+      "phonétique": "fɔ-nyɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "opportunité",
+      "dioula": "fɛ",
+      "phonétique": "fɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "chiffres"
+    },
+    {
+      "français": "croissance",
+      "dioula": "bɔya",
+      "phonétique": "bɔ-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "personnes_metiers"
+    },
+    {
+      "français": "réussite",
+      "dioula": "se",
+      "phonétique": "sé",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "échec",
+      "dioula": "tɛ se",
+      "phonétique": "tɛ sé",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "finance_commerce"
+    },
+    {
+      "français": "sport",
+      "dioula": "spor",
+      "phonétique": "spor",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "football",
+      "dioula": "futiboli",
+      "phonétique": "fou-ti-bo-li",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "jouer",
+      "dioula": "tɔgɔ",
+      "phonétique": "tɔ-gɔ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "adverbes_connecteurs"
+    },
+    {
+      "français": "équipe",
+      "dioula": "kulu",
+      "phonétique": "kou-lou",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "match",
+      "dioula": "mati",
+      "phonétique": "ma-ti",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "but (goal)",
+      "dioula": "gol",
+      "phonétique": "gol",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "entraîner",
+      "dioula": "karan",
+      "phonétique": "ka-ran",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "entraîneur",
+      "dioula": "karanfa",
+      "phonétique": "ka-ran-fa",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "gagner",
+      "dioula": "se",
+      "phonétique": "sé",
+      "ton": "haut",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "perdre",
+      "dioula": "tɛ se",
+      "phonétique": "tɛ sé",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "force",
+      "dioula": "fanga",
+      "phonétique": "fan-ga",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "vitesse",
+      "dioula": "teliya",
+      "phonétique": "te-li-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "entraînement",
+      "dioula": "karanya",
+      "phonétique": "ka-ran-ya",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "compétition",
+      "dioula": "fɛrɛ",
+      "phonétique": "fɛ-rɛ",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "arbitre",
+      "dioula": "jɛgɛla",
+      "phonétique": "djɛ-gɛ-la",
+      "ton": "bas",
+      "source": "voai",
+      "categorie": "sport"
+    },
+    {
+      "français": "capital",
+      "dioula": "wari kɔrɔ",
+      "phonétique": "wa-ri kɔ-rɔ",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "flux de trésorerie",
+      "dioula": "wari bɔ ani wari na",
+      "phonétique": "wa-ri bɔ a-ni wa-ri na",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "actif",
+      "dioula": "fɛn sɔrɔ",
+      "phonétique": "fɛn sɔ-rɔ",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "passif",
+      "dioula": "fɛn bɔn",
+      "phonétique": "fɛn bɔn",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "bénéfice net",
+      "dioula": "nafa kɔrɔ",
+      "phonétique": "na-fa kɔ-rɔ",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "chiffre d'affaires",
+      "dioula": "feere nafa",
+      "phonétique": "fé-ré na-fa",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "transaction",
+      "dioula": "wari di ani san",
+      "phonétique": "wa-ri di a-ni san",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "liquidité",
+      "dioula": "wari sɔrɔya",
+      "phonétique": "wa-ri sɔ-rɔ-ya",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "inflation",
+      "dioula": "wari jɔgɔ bɔya",
+      "phonétique": "wa-ri djo-gɔ bɔ-ya",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "taux",
+      "dioula": "jɔgɔya",
+      "phonétique": "djo-gɔ-ya",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "startup",
+      "dioula": "baara kura",
+      "phonétique": "baa-ra kou-ra",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "innovation",
+      "dioula": "kura fɛn",
+      "phonétique": "kou-ra fɛn",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "marché cible",
+      "dioula": "suugu laɲini",
+      "phonétique": "suu-gou la-nyi-ni",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "modèle économique",
+      "dioula": "nafa kɛla",
+      "phonétique": "na-fa kɛ-la",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "croissance rapide",
+      "dioula": "teliya bɔya",
+      "phonétique": "te-li-ya bɔ-ya",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "investisseur",
+      "dioula": "wari donla",
+      "phonétique": "wa-ri don-la",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "financement",
+      "dioula": "wari di",
+      "phonétique": "wa-ri di",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "levée de fonds",
+      "dioula": "wari lajɛ",
+      "phonétique": "wa-ri la-jɛ",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "réseau",
+      "dioula": "jɛgɛ",
+      "phonétique": "djɛ-gɛ",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "partenariat",
+      "dioula": "kan ka kɛ",
+      "phonétique": "kan ka kɛ",
+      "ton": "bas",
+      "categorie": "finance_commerce",
+      "source": "oai_v3"
+    },
+    {
+      "français": "leadership",
+      "dioula": "ɲɛnabɔ fanga",
+      "phonétique": "nya-na-bɔ fan-ga",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "motivation",
+      "dioula": "fanga di",
+      "phonétique": "fan-ga di",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "discipline",
+      "dioula": "ladamu",
+      "phonétique": "la-da-mou",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "productivité",
+      "dioula": "baara teliya",
+      "phonétique": "baa-ra te-li-ya",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "objectif atteint",
+      "dioula": "laɲini se",
+      "phonétique": "la-nyi-ni sé",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "performance",
+      "dioula": "seya",
+      "phonétique": "sé-ya",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "résultat",
+      "dioula": "sɔrɔ",
+      "phonétique": "sɔ-rɔ",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "analyse",
+      "dioula": "hakili ye",
+      "phonétique": "ha-ki-li yé",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "décision",
+      "dioula": "hakili kɛ",
+      "phonétique": "ha-ki-li kɛ",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "risque",
+      "dioula": "siran",
+      "phonétique": "si-ran",
+      "ton": "bas",
+      "categorie": "management",
+      "source": "oai_v3"
+    },
+    {
+      "français": "attaquant",
+      "dioula": "bolo fɔla",
+      "phonétique": "bo-lo fɔ-la",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "défenseur",
+      "dioula": "kɔnɔ fɔla",
+      "phonétique": "kɔ-nɔ fɔ-la",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "gardien",
+      "dioula": "da la",
+      "phonétique": "da la",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "passe",
+      "dioula": "di",
+      "phonétique": "di",
+      "ton": "haut",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "tir",
+      "dioula": "bɔ",
+      "phonétique": "bɔ",
+      "ton": "haut",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "dribbler",
+      "dioula": "tɔgɔ teliya",
+      "phonétique": "tɔ-gɔ te-li-ya",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "supporter",
+      "dioula": "kanu",
+      "phonétique": "ka-nou",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "stade",
+      "dioula": "stadi",
+      "phonétique": "sta-di",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "tournoi",
+      "dioula": "fɛrɛba",
+      "phonétique": "fɛ-rɛ-ba",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "victoire",
+      "dioula": "seba",
+      "phonétique": "sé-ba",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    },
+    {
+      "français": "défaite",
+      "dioula": "tɛ seba",
+      "phonétique": "tɛ sé-ba",
+      "ton": "bas",
+      "categorie": "sport",
+      "source": "oai_v3"
+    }
+  ],
+  "paires_entrainement": [
+    {
+      "id": "T001",
+      "instruction": "Traduis en dioula : Bonjour, comment vas-tu ?",
+      "input": "",
+      "output": "I ni sogoma, i ka kɛnɛ wa ?",
+      "source": "v1"
+    },
+    {
+      "id": "T002",
+      "instruction": "Traduis en dioula : Je vais bien, merci.",
+      "input": "",
+      "output": "N ka kɛnɛ, i ni baaraka.",
+      "source": "v1"
+    },
+    {
+      "id": "T003",
+      "instruction": "Traduis en dioula : Quel est ton nom ?",
+      "input": "",
+      "output": "I tɔgɔ di ?",
+      "source": "v1"
+    },
+    {
+      "id": "T004",
+      "instruction": "Traduis en dioula : Je m'appelle Koné.",
+      "input": "",
+      "output": "Ne tɔgɔ Koné.",
+      "source": "v1"
+    },
+    {
+      "id": "T005",
+      "instruction": "Traduis en dioula : Je vais au marché.",
+      "input": "",
+      "output": "Ne bɛ taa sugu la.",
+      "source": "v1"
+    },
+    {
+      "id": "T006",
+      "instruction": "Traduis en dioula : Il ne mange pas.",
+      "input": "",
+      "output": "A tɛ dumu.",
+      "source": "v1"
+    },
+    {
+      "id": "T007",
+      "instruction": "Traduis en dioula : Nous allons à l'école demain.",
+      "input": "",
+      "output": "An bɛna taa kalanso sini.",
+      "source": "v1"
+    },
+    {
+      "id": "T008",
+      "instruction": "Traduis en dioula : Elle a acheté du riz.",
+      "input": "",
+      "output": "A ye malo san.",
+      "source": "v1"
+    },
+    {
+      "id": "T009",
+      "instruction": "Traduis en dioula : Mon père est allé à Abidjan.",
+      "input": "",
+      "output": "Ne ka fa taara Abidjan.",
+      "source": "v1"
+    },
+    {
+      "id": "T010",
+      "instruction": "Traduis en dioula : Je ne sais pas.",
+      "input": "",
+      "output": "Ne tɛ a don.",
+      "source": "v1"
+    },
+    {
+      "id": "T011",
+      "instruction": "Traduis en dioula : Merci beaucoup !",
+      "input": "",
+      "output": "I ni baaraka kosɛbɛ !",
+      "source": "v1"
+    },
+    {
+      "id": "T012",
+      "instruction": "Traduis en dioula : Où est le marché ?",
+      "input": "",
+      "output": "Sugu bɛ yɔrɔ di ?",
+      "source": "v1"
+    },
+    {
+      "id": "T013",
+      "instruction": "Traduis en dioula : C'est combien ?",
+      "input": "",
+      "output": "A joli ye joli ye ?",
+      "note": "À vérifier avec locuteur natif",
+      "source": "v1"
+    },
+    {
+      "id": "T014",
+      "instruction": "Traduis en dioula : Je veux de l'eau.",
+      "input": "",
+      "output": "Ne fɛ ji.",
+      "source": "v1"
+    },
+    {
+      "id": "T015",
+      "instruction": "Traduis en dioula : Il travaille beaucoup.",
+      "input": "",
+      "output": "A bɛ baara kɛ kosɛbɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T016",
+      "instruction": "Traduis en dioula : Les enfants jouent.",
+      "input": "",
+      "output": "Denw bɛ laɲini.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T017",
+      "instruction": "Traduis en dioula : Ma mère cuisine.",
+      "input": "",
+      "output": "Ne ka ba bɛ na tobi.",
+      "source": "v1"
+    },
+    {
+      "id": "T018",
+      "instruction": "Traduis en dioula : Nous sommes ivoiriens.",
+      "input": "",
+      "output": "An ye Côte d'Ivoire mɔgɔw ye.",
+      "source": "v1"
+    },
+    {
+      "id": "T019",
+      "instruction": "Traduis en dioula : Je ne parle pas bien le dioula.",
+      "input": "",
+      "output": "Ne tɛ julakan kumana ɲɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T020",
+      "instruction": "Traduis en dioula : Il est parti hier.",
+      "input": "",
+      "output": "A taara kunu.",
+      "source": "v1"
+    },
+    {
+      "id": "T021",
+      "instruction": "Traduis en dioula : Donne-moi du riz.",
+      "input": "",
+      "output": "Malo di ne ma.",
+      "source": "v1"
+    },
+    {
+      "id": "T022",
+      "instruction": "Traduis en dioula : La route est longue.",
+      "input": "",
+      "output": "Sira ba.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T023",
+      "instruction": "Traduis en dioula : J'ai faim.",
+      "input": "",
+      "output": "Kɔngɔ bɛ ne la.",
+      "note": "Littéralement : la faim est sur moi",
+      "source": "v1"
+    },
+    {
+      "id": "T024",
+      "instruction": "Traduis en dioula : J'ai soif.",
+      "input": "",
+      "output": "Minɛ bɛ ne la.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T025",
+      "instruction": "Traduis en dioula : C'est bien !",
+      "input": "",
+      "output": "A ka ɲɛ !",
+      "source": "v1"
+    },
+    {
+      "id": "T026",
+      "instruction": "Traduis en dioula : Ce n'est pas bien.",
+      "input": "",
+      "output": "A tɛ ɲɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T027",
+      "instruction": "Explique en français la règle SOV du dioula.",
+      "input": "",
+      "output": "En dioula, l'ordre des mots est Sujet-Objet-Verbe (SOV), contrairement au français qui est Sujet-Verbe-Objet (SVO). Par exemple, 'Je mange du riz' se dit 'Ne bɛ malo dumu' — littéralement 'Je [présent] riz manger'.",
+      "source": "v1"
+    },
+    {
+      "id": "T028",
+      "instruction": "Traduis en dioula : Ma maison est grande.",
+      "input": "",
+      "output": "Ne ka so ba.",
+      "source": "v1"
+    },
+    {
+      "id": "T029",
+      "instruction": "Traduis en dioula : Ils sont venus de Bouaké.",
+      "input": "",
+      "output": "U bɛ bɔ Bouaké.",
+      "source": "v1"
+    },
+    {
+      "id": "T030",
+      "instruction": "Traduis en dioula : Bonsoir, comment s'est passée ta journée ?",
+      "input": "",
+      "output": "I ni su. I ka tile tɛmɛna cogo di ?",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T031",
+      "instruction": "Traduis en dioula : Je cherche un taxi.",
+      "input": "",
+      "output": "Ne bɛ takisi ɲini.",
+      "source": "v1"
+    },
+    {
+      "id": "T032",
+      "instruction": "Traduis en dioula : L'eau est froide.",
+      "input": "",
+      "output": "Ji jari.",
+      "source": "v1"
+    },
+    {
+      "id": "T033",
+      "instruction": "Traduis en dioula : Mon frère aîné s'appelle Dramane.",
+      "input": "",
+      "output": "Ne ka kɔ tɔgɔ Dramane.",
+      "source": "v1"
+    },
+    {
+      "id": "T034",
+      "instruction": "Traduis en dioula : Nous avons trois enfants.",
+      "input": "",
+      "output": "Denw saba bɛ an fɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T035",
+      "instruction": "Traduis en dioula : Je ne peux pas venir aujourd'hui.",
+      "input": "",
+      "output": "Ne tɛ se ka na bi.",
+      "source": "v1"
+    },
+    {
+      "id": "T036",
+      "instruction": "Traduis en dioula : Aide-moi s'il te plaît.",
+      "input": "",
+      "output": "Ne dɛmɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T037",
+      "instruction": "Traduis en dioula : Le vendredi est un jour sacré.",
+      "input": "",
+      "output": "Arjuma ye tile dɔ ye.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T038",
+      "instruction": "Traduis en dioula : J'habite à Abidjan depuis cinq ans.",
+      "input": "",
+      "output": "Ne bɛ sigi Abidjan saan duuru.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T039",
+      "instruction": "Comment dit-on 'merci' en dioula ?",
+      "input": "",
+      "output": "On dit 'I ni baaraka' pour remercier quelqu'un en dioula. Pour insister : 'I ni baaraka kosɛbɛ' (merci beaucoup).",
+      "source": "v1"
+    },
+    {
+      "id": "T040",
+      "instruction": "Traduis en dioula : Il n'y a pas de problème.",
+      "input": "",
+      "output": "Gɛlɛya si tɛ.",
+      "note": "Littéralement : il n'y a aucune difficulté",
+      "source": "v1"
+    },
+    {
+      "id": "T041",
+      "instruction": "Traduis en français : Ne bɛ taa sugu la.",
+      "input": "",
+      "output": "Je vais au marché.",
+      "source": "v1"
+    },
+    {
+      "id": "T042",
+      "instruction": "Traduis en français : A ye malo san.",
+      "input": "",
+      "output": "Il/Elle a acheté du riz.",
+      "source": "v1"
+    },
+    {
+      "id": "T043",
+      "instruction": "Traduis en français : An tɛ julakan don.",
+      "input": "",
+      "output": "Nous ne savons pas le dioula. / Nous ne connaissons pas le dioula.",
+      "source": "v1"
+    },
+    {
+      "id": "T044",
+      "instruction": "Traduis en français : I ni baaraka kosɛbɛ.",
+      "input": "",
+      "output": "Merci beaucoup.",
+      "source": "v1"
+    },
+    {
+      "id": "T045",
+      "instruction": "Traduis en français : Denw bɛ kalanso la.",
+      "input": "",
+      "output": "Les enfants sont à l'école.",
+      "source": "v1"
+    },
+    {
+      "id": "T046",
+      "instruction": "Quelle est la différence entre 'bɛ' et 'tɛ' en dioula ?",
+      "input": "",
+      "output": "'Bɛ' est l'auxiliaire du présent affirmatif en dioula. Il exprime une action en cours ou habituelle. 'Tɛ' est son équivalent négatif. Exemple : 'Ne bɛ dumu' (je mange) et 'Ne tɛ dumu' (je ne mange pas).",
+      "source": "v1"
+    },
+    {
+      "id": "T047",
+      "instruction": "Comment forme-t-on le pluriel en dioula ?",
+      "input": "",
+      "output": "En dioula, le pluriel se forme en ajoutant le suffixe '-w' à la fin du nom. Par exemple : 'mɔgɔ' (personne) devient 'mɔgɔw' (personnes), 'so' (maison) devient 'sow' (maisons), 'den' (enfant) devient 'denw' (enfants).",
+      "source": "v1"
+    },
+    {
+      "id": "T048",
+      "instruction": "Traduis en dioula : Je vais bien, Dieu merci.",
+      "input": "",
+      "output": "N ka kɛnɛ, Ala ka baaraka.",
+      "note": "Ala = Dieu (terme islamique très utilisé en Dioula)",
+      "source": "v1"
+    },
+    {
+      "id": "T049",
+      "instruction": "Comment dit-on les jours de la semaine en dioula ?",
+      "input": "",
+      "output": "Les jours de la semaine en dioula sont : Alata (lundi), Tarata (mardi), Araba (mercredi), Alamisa (jeudi), Arjuma (vendredi — jour sacré), Sibiri (samedi), Kari (dimanche). Ces noms ont des origines arabes, reflétant l'influence islamique.",
+      "source": "v1"
+    },
+    {
+      "id": "T050",
+      "instruction": "Traduis en dioula : La Côte d'Ivoire est mon pays.",
+      "input": "",
+      "output": "Côte d'Ivoire ye ne ka jamana ye.",
+      "source": "v1"
+    },
+    {
+      "id": "T051",
+      "instruction": "Traduis en dioula : Je parle un peu le dioula.",
+      "input": "",
+      "output": "Ne bɛ julakan kumana dɔ dɔ.",
+      "source": "v1"
+    },
+    {
+      "id": "T052",
+      "instruction": "Traduis en dioula : Attends-moi ici.",
+      "input": "",
+      "output": "Ne makɔnɔ yan.",
+      "source": "v1"
+    },
+    {
+      "id": "T053",
+      "instruction": "Traduis en dioula : Je suis fatigué.",
+      "input": "",
+      "output": "Gɛlɛya bɛ ne la.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T054",
+      "instruction": "Traduis en dioula : Il fait chaud aujourd'hui.",
+      "input": "",
+      "output": "Kɔɔ bɛ bi.",
+      "note": "Littéralement : la chaleur est aujourd'hui",
+      "source": "v1"
+    },
+    {
+      "id": "T055",
+      "instruction": "Traduis en dioula : Prends ça.",
+      "input": "",
+      "output": "Nin ta.",
+      "source": "v1"
+    },
+    {
+      "id": "T056",
+      "instruction": "Traduis en dioula : Je reviendrai demain matin.",
+      "input": "",
+      "output": "Ne bɛna segin sini sogoma.",
+      "source": "v1"
+    },
+    {
+      "id": "T057",
+      "instruction": "Traduis en dioula : Nous mangeons ensemble.",
+      "input": "",
+      "output": "An bɛ dumu ɲɔgɔn fɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T058",
+      "instruction": "Traduis en dioula : Son nom est Oumar.",
+      "input": "",
+      "output": "A tɔgɔ Oumar.",
+      "source": "v1"
+    },
+    {
+      "id": "T059",
+      "instruction": "Traduis en dioula : Combien coûte le riz ?",
+      "input": "",
+      "output": "Malo dɔn joli ?",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T060",
+      "instruction": "Traduis en dioula : Je travaille à Abidjan.",
+      "input": "",
+      "output": "Ne bɛ baara kɛ Abidjan.",
+      "source": "v1"
+    },
+    {
+      "id": "T061",
+      "instruction": "Traduis en français : A tɔgɔ Fatoumata.",
+      "input": "",
+      "output": "Son nom est Fatoumata. / Elle s'appelle Fatoumata.",
+      "source": "v1"
+    },
+    {
+      "id": "T062",
+      "instruction": "Traduis en français : Ne ka fa ye karamɔgɔ ye.",
+      "input": "",
+      "output": "Mon père est un enseignant.",
+      "source": "v1"
+    },
+    {
+      "id": "T063",
+      "instruction": "Traduis en français : An bɛna taa sini.",
+      "input": "",
+      "output": "Nous irons demain.",
+      "source": "v1"
+    },
+    {
+      "id": "T064",
+      "instruction": "Traduis en français : Wari bɛ a fɛ.",
+      "input": "",
+      "output": "Il/Elle a de l'argent. (Littéralement : l'argent est avec lui/elle.)",
+      "source": "v1"
+    },
+    {
+      "id": "T065",
+      "instruction": "Comment salue-t-on le matin en dioula ?",
+      "input": "",
+      "output": "Le matin, on dit 'I ni sogoma' (Bonjour). La réponse est 'Nba' ou 'Nse'. Si on veut demander comment quelqu'un va, on ajoute 'i ka kɛnɛ wa ?' (est-ce que tu vas bien ?).",
+      "source": "v1"
+    },
+    {
+      "id": "T066",
+      "instruction": "Traduis en dioula : Le dioula est une belle langue.",
+      "input": "",
+      "output": "Julakan ka ɲɛ kosɛbɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T067",
+      "instruction": "Traduis en dioula : Je comprends un peu.",
+      "input": "",
+      "output": "Ne bɛ a faamu dɔ dɔ.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T068",
+      "instruction": "Traduis en dioula : Répète s'il te plaît.",
+      "input": "",
+      "output": "A fɔ tugu.",
+      "note": "Littéralement : dis-le encore",
+      "source": "v1"
+    },
+    {
+      "id": "T069",
+      "instruction": "Traduis en dioula : Je viens d'Abidjan.",
+      "input": "",
+      "output": "Ne bɛ bɔ Abidjan.",
+      "source": "v1"
+    },
+    {
+      "id": "T070",
+      "instruction": "Traduis en dioula : Il y a beaucoup de monde au marché.",
+      "input": "",
+      "output": "Mɔgɔw ca sugu la.",
+      "source": "v1"
+    },
+    {
+      "id": "T071",
+      "instruction": "Explique la possession en dioula.",
+      "input": "",
+      "output": "En dioula, la possession se marque avec la particule 'ka' entre le possesseur et la chose possédée. Structure : Possesseur + ka + Objet. Exemples : 'ne ka so' (ma maison), 'i ka fa' (ton père), 'a ka mobili' (sa voiture), 'an ka kalanso' (notre école).",
+      "source": "v1"
+    },
+    {
+      "id": "T072",
+      "instruction": "Traduis en dioula : Il fait du commerce.",
+      "input": "",
+      "output": "A bɛ jula kɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T073",
+      "instruction": "Traduis en dioula : La nuit est tombée.",
+      "input": "",
+      "output": "Su ye na.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T074",
+      "instruction": "Traduis en dioula : Dieu est grand.",
+      "input": "",
+      "output": "Ala ka bon.",
+      "note": "Expression très commune en milieu musulman ivoirien",
+      "source": "v1"
+    },
+    {
+      "id": "T075",
+      "instruction": "Traduis en dioula : Je t'aime.",
+      "input": "",
+      "output": "Ne kanu i.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T076",
+      "instruction": "Traduis en dioula : L'école est fermée aujourd'hui.",
+      "input": "",
+      "output": "Kalanso datugu bi.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T077",
+      "instruction": "Traduis en dioula : Je veux apprendre le dioula.",
+      "input": "",
+      "output": "Ne fɛ ka julakan kalan.",
+      "source": "v1"
+    },
+    {
+      "id": "T078",
+      "instruction": "Traduis en dioula : Mon ami parle dioula très bien.",
+      "input": "",
+      "output": "Ne ka teri bɛ julakan kumana ɲɛ kosɛbɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T079",
+      "instruction": "Traduis en dioula : Qu'est-ce que tu fais ?",
+      "input": "",
+      "output": "I bɛ mun kɛ ?",
+      "source": "v1"
+    },
+    {
+      "id": "T080",
+      "instruction": "Traduis en dioula : Je suis commerçant.",
+      "input": "",
+      "output": "Ne ye jula ye.",
+      "source": "v1"
+    },
+    {
+      "id": "T081",
+      "instruction": "Traduis en dioula : Nos enfants vont à l'école.",
+      "input": "",
+      "output": "An ka denw bɛ taa kalanso la.",
+      "source": "v1"
+    },
+    {
+      "id": "T082",
+      "instruction": "Traduis en français : Ne bɛ julakan kalan.",
+      "input": "",
+      "output": "J'apprends le dioula.",
+      "source": "v1"
+    },
+    {
+      "id": "T083",
+      "instruction": "Traduis en français : I ka so ye ban ye ?",
+      "input": "",
+      "output": "Ta maison est grande ?",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T084",
+      "instruction": "Traduis en dioula : Il pleut.",
+      "input": "",
+      "output": "Saan bɛ bɔ.",
+      "note": "Littéralement : la pluie sort",
+      "source": "v1"
+    },
+    {
+      "id": "T085",
+      "instruction": "Traduis en dioula : J'ai besoin d'un médecin.",
+      "input": "",
+      "output": "Dotiri ka ɲini bɛ ne fɛ.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T086",
+      "instruction": "Traduis en dioula : Où es-tu ?",
+      "input": "",
+      "output": "I bɛ yɔrɔ di ?",
+      "source": "v1"
+    },
+    {
+      "id": "T087",
+      "instruction": "Traduis en dioula : Je suis à la maison.",
+      "input": "",
+      "output": "Ne bɛ so.",
+      "source": "v1"
+    },
+    {
+      "id": "T088",
+      "instruction": "Traduis en dioula : Viens ici !",
+      "input": "",
+      "output": "Na yan !",
+      "source": "v1"
+    },
+    {
+      "id": "T089",
+      "instruction": "Traduis en dioula : Ils sont partis.",
+      "input": "",
+      "output": "U taara.",
+      "source": "v1"
+    },
+    {
+      "id": "T090",
+      "instruction": "Traduis en dioula : Je suis content.",
+      "input": "",
+      "output": "Ne nisɔndiya.",
+      "source": "v1"
+    },
+    {
+      "id": "T091",
+      "instruction": "Traduis en dioula : Ne cours pas !",
+      "input": "",
+      "output": "Wulila kana kɛ !",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T092",
+      "instruction": "Traduis en dioula : Quelle heure est-il ?",
+      "input": "",
+      "output": "Waati joli bɛ sisan ?",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T093",
+      "instruction": "Traduis en dioula : Il est midi.",
+      "input": "",
+      "output": "Tile bɛ tilancɛ.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T094",
+      "instruction": "Traduis en dioula : Nous avons mangé ensemble hier soir.",
+      "input": "",
+      "output": "An ye dumu ɲɔgɔn fɛ kunu su.",
+      "source": "v1"
+    },
+    {
+      "id": "T095",
+      "instruction": "Traduis en dioula : Je n'ai pas d'argent.",
+      "input": "",
+      "output": "Wari tɛ ne fɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T096",
+      "instruction": "Traduis en dioula : Le poisson est frais.",
+      "input": "",
+      "output": "Jɛgɛ kura.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T097",
+      "instruction": "Traduis en dioula : Félicitations !",
+      "input": "",
+      "output": "I ni barika !",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T098",
+      "instruction": "Traduis en dioula : Que Dieu te bénisse.",
+      "input": "",
+      "output": "Ala ka i dɛmɛ.",
+      "note": "Expression très courante en Côte d'Ivoire",
+      "source": "v1"
+    },
+    {
+      "id": "T099",
+      "instruction": "Comment dit-on les chiffres de 1 à 5 en dioula ?",
+      "input": "",
+      "output": "1 = kelen, 2 = fila, 3 = saba, 4 = naani, 5 = duuru.",
+      "source": "v1"
+    },
+    {
+      "id": "T100",
+      "instruction": "Traduis en dioula : Je cherche la route pour Yamoussoukro.",
+      "input": "",
+      "output": "Ne bɛ sira ɲini Yamoussoukro ma.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T101",
+      "instruction": "Traduis en dioula : Parle lentement s'il te plaît.",
+      "input": "",
+      "output": "Kuma nɔgɔya.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T102",
+      "instruction": "Traduis en dioula : Tu as compris ?",
+      "input": "",
+      "output": "I ye a faamu wa ?",
+      "source": "v1"
+    },
+    {
+      "id": "T103",
+      "instruction": "Traduis en dioula : Je n'ai pas compris.",
+      "input": "",
+      "output": "Ne ma a faamu.",
+      "source": "v1"
+    },
+    {
+      "id": "T104",
+      "instruction": "Traduis en dioula : Bonne nuit.",
+      "input": "",
+      "output": "Su ɲɛ.",
+      "source": "v1"
+    },
+    {
+      "id": "T105",
+      "instruction": "Traduis en dioula : Ma femme est à la maison.",
+      "input": "",
+      "output": "Ne ka muso bɛ so.",
+      "source": "v1"
+    },
+    {
+      "id": "T106",
+      "instruction": "Traduis en dioula : Il faut travailler.",
+      "input": "",
+      "output": "Baara kɛ ka kan.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T107",
+      "instruction": "Traduis en dioula : Donne-lui à manger.",
+      "input": "",
+      "output": "A dumuni di a ma.",
+      "source": "v1"
+    },
+    {
+      "id": "T108",
+      "instruction": "Traduis en dioula : Je vends du tissu au marché.",
+      "input": "",
+      "output": "Ne bɛ fini feere sugu la.",
+      "source": "v1"
+    },
+    {
+      "id": "T109",
+      "instruction": "Traduis en dioula : Ils sont revenus du village.",
+      "input": "",
+      "output": "U seginna dugu finin na.",
+      "source": "v1"
+    },
+    {
+      "id": "T110",
+      "instruction": "Traduis en dioula : Mon ami est malade.",
+      "input": "",
+      "output": "Ne ka teri dimi.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T111",
+      "instruction": "Traduis en français : Ne bɛ bɔ Côte d'Ivoire.",
+      "input": "",
+      "output": "Je viens de Côte d'Ivoire.",
+      "source": "v1"
+    },
+    {
+      "id": "T112",
+      "instruction": "Traduis en français : U bɛ taa Yamoussoukro.",
+      "input": "",
+      "output": "Ils vont à Yamoussoukro.",
+      "source": "v1"
+    },
+    {
+      "id": "T113",
+      "instruction": "Traduis en français : A ye mobili san kura.",
+      "input": "",
+      "output": "Il/Elle a acheté une nouvelle voiture.",
+      "source": "v1"
+    },
+    {
+      "id": "T114",
+      "instruction": "Traduis en français : Wari tɛ ne fɛ.",
+      "input": "",
+      "output": "Je n'ai pas d'argent.",
+      "source": "v1"
+    },
+    {
+      "id": "T115",
+      "instruction": "Traduis en français : Ala ka i dɛmɛ.",
+      "input": "",
+      "output": "Que Dieu t'aide / te bénisse.",
+      "source": "v1"
+    },
+    {
+      "id": "T116",
+      "instruction": "Traduis en dioula : Je suis enseignant.",
+      "input": "",
+      "output": "Ne ye karamɔgɔ ye.",
+      "source": "v1"
+    },
+    {
+      "id": "T117",
+      "instruction": "Traduis en dioula : Il est ingénieur.",
+      "input": "",
+      "output": "A ye injɛnɛri ye.",
+      "note": "injɛnɛri = emprunt du français ingénieur",
+      "source": "v1"
+    },
+    {
+      "id": "T118",
+      "instruction": "Traduis en dioula : Nous ne sommes pas au marché.",
+      "input": "",
+      "output": "An tɛ sugu la.",
+      "source": "v1"
+    },
+    {
+      "id": "T119",
+      "instruction": "Traduis en dioula : Cet enfant pleure.",
+      "input": "",
+      "output": "Den nin bɛ ɲɔgɔn.",
+      "a_verifier": true,
+      "source": "v1"
+    },
+    {
+      "id": "T120",
+      "instruction": "Traduis en dioula : Je suis très heureux de te rencontrer.",
+      "input": "",
+      "output": "Ne nisɔndiya kosɛbɛ i ye.",
+      "source": "v1"
+    },
+    {
+      "instruction": "Traduis en dioula : Bonjour",
+      "input": "",
+      "output": "I ni ce",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Comment ça va ?",
+      "input": "",
+      "output": "I ka kènè wa ?",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Je vais bien",
+      "input": "",
+      "output": "N ka kènè",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Merci beaucoup",
+      "input": "",
+      "output": "I ni che kosɛbɛ",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Je veux acheter du riz",
+      "input": "",
+      "output": "Ne bɛ dô san",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Je suis malade",
+      "input": "",
+      "output": "Ne kɛnɛ tɛ",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Viens ici",
+      "input": "",
+      "output": "Na yan",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Va à l’école",
+      "input": "",
+      "output": "Taa kalan so",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Je suis content",
+      "input": "",
+      "output": "Ne di",
+      "source": "oai1"
+    },
+    {
+      "instruction": "Traduis en dioula : Je vais travailler",
+      "input": "",
+      "output": "Ne bɛ baara kɛ",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Il parle bien",
+      "input": "",
+      "output": "A bɛ fɔ di",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Écoute-moi",
+      "input": "",
+      "output": "Mɛn ne",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Nous allons au marché",
+      "input": "",
+      "output": "An bɛ suugu taa",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Je veux dormir",
+      "input": "",
+      "output": "Ne bɛ sunɔ fɛ",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Tu dois étudier",
+      "input": "",
+      "output": "I kan kalan",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Si tu viens, je suis content",
+      "input": "",
+      "output": "Ni i na, ne di",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : L’enfant mange",
+      "input": "",
+      "output": "Den dumu",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Où est l’eau ?",
+      "input": "",
+      "output": "Ji min bɛ ?",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula : Je ne veux pas",
+      "input": "",
+      "output": "Ne tɛ fɛ",
+      "source": "oai3"
+    },
+    {
+      "instruction": "Traduis en dioula",
+      "input": "Bonjour mon ami",
+      "output": "I ni ce, ne teriya",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en français",
+      "input": "I ka kènè wa ?",
+      "output": "Comment vas-tu ?",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Réponds en dioula",
+      "input": "Quel est ton nom ?",
+      "output": "I tɔgɔ di ?",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Complète la phrase en dioula",
+      "input": "Ne bɛ ____ (manger)",
+      "output": "Ne bɛ dumu",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en dioula",
+      "input": "Je vais au marché",
+      "output": "Ne bɛ suugu taa",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en français",
+      "input": "Ne tɛ faamu",
+      "output": "Je ne comprends pas",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Donne la forme négative",
+      "input": "Ne bɛ dumu",
+      "output": "Ne tɛ dumu",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Donne la forme interrogative",
+      "input": "I ka kènè",
+      "output": "I ka kènè wa ?",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en dioula",
+      "input": "Nous travaillons",
+      "output": "An bɛ baara kɛ",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en dioula",
+      "input": "Je veux acheter du poisson",
+      "output": "Ne bɛ jɛgɛ san",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Dialogue en dioula (marché)",
+      "input": "Acheteur demande le prix du riz",
+      "output": "A: Dô jɔgɔ ye ?\nB: A ye 500 franc\nA: A tɛ kɛ, dimi kɛ",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Dialogue en dioula (salutation)",
+      "input": "Rencontre entre deux personnes",
+      "output": "A: I ni ce\nB: I ni ce\nA: I ka kènè wa ?\nB: N ka kènè",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Exprime une émotion en dioula",
+      "input": "Je suis heureux",
+      "output": "Ne di",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Exprime une émotion en dioula",
+      "input": "Je suis fatigué",
+      "output": "Ne gɛlɛya",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Donne un ordre en dioula",
+      "input": "Viens ici",
+      "output": "Na yan",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Donne un ordre en dioula",
+      "input": "Écoute-moi",
+      "output": "Mɛn ne",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en dioula (finance)",
+      "input": "Je veux investir de l'argent",
+      "output": "Ne bɛ wari don",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en dioula (business)",
+      "input": "Mon entreprise grandit",
+      "output": "Ne ka baara so bɔya",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduis en dioula (sport)",
+      "input": "Mon équipe a gagné",
+      "output": "Ne ka kulu se",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Corrige la phrase",
+      "input": "Ne dumu bɛ",
+      "output": "Ne bɛ dumu",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Réorganise la phrase (SOV)",
+      "input": "Ne bɛ taa suugu",
+      "output": "Ne suugu taa",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Explique la phrase",
+      "input": "Ne ye dô dumu",
+      "output": "Phrase au passé : 'ye' indique que l'action est accomplie. Structure : Sujet + ye + Objet + Verbe",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Génère une phrase en dioula",
+      "input": "utilise le verbe 'kalan'",
+      "output": "Ne bɛ kalan",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Génère une phrase en dioula",
+      "input": "utilise 'wari'",
+      "output": "Ne bɛ wari sɔrɔ",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduction bidirectionnelle",
+      "input": "Je vais dormir",
+      "output": "Ne bɛ sunɔ",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Traduction bidirectionnelle",
+      "input": "A bɛ fɔ",
+      "output": "Il parle",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Compréhension",
+      "input": "Que signifie 'bɛ' en dioula ?",
+      "output": "Marqueur aspectuel : présent, futur proche ou action en cours. Ex: Ne bɛ dumu = Je mange",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Compréhension",
+      "input": "Que signifie 'tɛ' ?",
+      "output": "Marqueur de négation au présent. Ex: Ne tɛ dumu = Je ne mange pas",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Créer une phrase complexe",
+      "input": "Si tu viens, je mange",
+      "output": "Ni i na, ne bɛ dumu",
+      "source": "oai_v3"
+    },
+    {
+      "instruction": "Créer une phrase complexe",
+      "input": "Je vais étudier pour réussir",
+      "output": "Ne bɛ taa ka kalan ka se",
+      "source": "oai_v3"
+    }
+  ]
+}

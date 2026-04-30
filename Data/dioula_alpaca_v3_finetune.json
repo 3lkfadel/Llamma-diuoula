@@ -1,0 +1,847 @@
+[
+  {
+    "instruction": "Traduis en dioula : Bonjour, comment vas-tu ?",
+    "input": "",
+    "output": "I ni sogoma, i ka kɛnɛ wa ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je vais bien, merci.",
+    "input": "",
+    "output": "N ka kɛnɛ, i ni baaraka."
+  },
+  {
+    "instruction": "Traduis en dioula : Quel est ton nom ?",
+    "input": "",
+    "output": "I tɔgɔ di ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je m'appelle Koné.",
+    "input": "",
+    "output": "Ne tɔgɔ Koné."
+  },
+  {
+    "instruction": "Traduis en dioula : Je vais au marché.",
+    "input": "",
+    "output": "Ne bɛ taa sugu la."
+  },
+  {
+    "instruction": "Traduis en dioula : Il ne mange pas.",
+    "input": "",
+    "output": "A tɛ dumu."
+  },
+  {
+    "instruction": "Traduis en dioula : Nous allons à l'école demain.",
+    "input": "",
+    "output": "An bɛna taa kalanso sini."
+  },
+  {
+    "instruction": "Traduis en dioula : Elle a acheté du riz.",
+    "input": "",
+    "output": "A ye malo san."
+  },
+  {
+    "instruction": "Traduis en dioula : Mon père est allé à Abidjan.",
+    "input": "",
+    "output": "Ne ka fa taara Abidjan."
+  },
+  {
+    "instruction": "Traduis en dioula : Je ne sais pas.",
+    "input": "",
+    "output": "Ne tɛ a don."
+  },
+  {
+    "instruction": "Traduis en dioula : Merci beaucoup !",
+    "input": "",
+    "output": "I ni baaraka kosɛbɛ !"
+  },
+  {
+    "instruction": "Traduis en dioula : Où est le marché ?",
+    "input": "",
+    "output": "Sugu bɛ yɔrɔ di ?"
+  },
+  {
+    "instruction": "Traduis en dioula : C'est combien ?",
+    "input": "",
+    "output": "A joli ye joli ye ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je veux de l'eau.",
+    "input": "",
+    "output": "Ne fɛ ji."
+  },
+  {
+    "instruction": "Traduis en dioula : Il travaille beaucoup.",
+    "input": "",
+    "output": "A bɛ baara kɛ kosɛbɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Les enfants jouent.",
+    "input": "",
+    "output": "Denw bɛ laɲini."
+  },
+  {
+    "instruction": "Traduis en dioula : Ma mère cuisine.",
+    "input": "",
+    "output": "Ne ka ba bɛ na tobi."
+  },
+  {
+    "instruction": "Traduis en dioula : Nous sommes ivoiriens.",
+    "input": "",
+    "output": "An ye Côte d'Ivoire mɔgɔw ye."
+  },
+  {
+    "instruction": "Traduis en dioula : Je ne parle pas bien le dioula.",
+    "input": "",
+    "output": "Ne tɛ julakan kumana ɲɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Il est parti hier.",
+    "input": "",
+    "output": "A taara kunu."
+  },
+  {
+    "instruction": "Traduis en dioula : Donne-moi du riz.",
+    "input": "",
+    "output": "Malo di ne ma."
+  },
+  {
+    "instruction": "Traduis en dioula : La route est longue.",
+    "input": "",
+    "output": "Sira ba."
+  },
+  {
+    "instruction": "Traduis en dioula : J'ai faim.",
+    "input": "",
+    "output": "Kɔngɔ bɛ ne la."
+  },
+  {
+    "instruction": "Traduis en dioula : J'ai soif.",
+    "input": "",
+    "output": "Minɛ bɛ ne la."
+  },
+  {
+    "instruction": "Traduis en dioula : C'est bien !",
+    "input": "",
+    "output": "A ka ɲɛ !"
+  },
+  {
+    "instruction": "Traduis en dioula : Ce n'est pas bien.",
+    "input": "",
+    "output": "A tɛ ɲɛ."
+  },
+  {
+    "instruction": "Explique en français la règle SOV du dioula.",
+    "input": "",
+    "output": "En dioula, l'ordre des mots est Sujet-Objet-Verbe (SOV), contrairement au français qui est Sujet-Verbe-Objet (SVO). Par exemple, 'Je mange du riz' se dit 'Ne bɛ malo dumu' — littéralement 'Je [présent] riz manger'."
+  },
+  {
+    "instruction": "Traduis en dioula : Ma maison est grande.",
+    "input": "",
+    "output": "Ne ka so ba."
+  },
+  {
+    "instruction": "Traduis en dioula : Ils sont venus de Bouaké.",
+    "input": "",
+    "output": "U bɛ bɔ Bouaké."
+  },
+  {
+    "instruction": "Traduis en dioula : Bonsoir, comment s'est passée ta journée ?",
+    "input": "",
+    "output": "I ni su. I ka tile tɛmɛna cogo di ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je cherche un taxi.",
+    "input": "",
+    "output": "Ne bɛ takisi ɲini."
+  },
+  {
+    "instruction": "Traduis en dioula : L'eau est froide.",
+    "input": "",
+    "output": "Ji jari."
+  },
+  {
+    "instruction": "Traduis en dioula : Mon frère aîné s'appelle Dramane.",
+    "input": "",
+    "output": "Ne ka kɔ tɔgɔ Dramane."
+  },
+  {
+    "instruction": "Traduis en dioula : Nous avons trois enfants.",
+    "input": "",
+    "output": "Denw saba bɛ an fɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Je ne peux pas venir aujourd'hui.",
+    "input": "",
+    "output": "Ne tɛ se ka na bi."
+  },
+  {
+    "instruction": "Traduis en dioula : Aide-moi s'il te plaît.",
+    "input": "",
+    "output": "Ne dɛmɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Le vendredi est un jour sacré.",
+    "input": "",
+    "output": "Arjuma ye tile dɔ ye."
+  },
+  {
+    "instruction": "Traduis en dioula : J'habite à Abidjan depuis cinq ans.",
+    "input": "",
+    "output": "Ne bɛ sigi Abidjan saan duuru."
+  },
+  {
+    "instruction": "Comment dit-on 'merci' en dioula ?",
+    "input": "",
+    "output": "On dit 'I ni baaraka' pour remercier quelqu'un en dioula. Pour insister : 'I ni baaraka kosɛbɛ' (merci beaucoup)."
+  },
+  {
+    "instruction": "Traduis en dioula : Il n'y a pas de problème.",
+    "input": "",
+    "output": "Gɛlɛya si tɛ."
+  },
+  {
+    "instruction": "Traduis en français : Ne bɛ taa sugu la.",
+    "input": "",
+    "output": "Je vais au marché."
+  },
+  {
+    "instruction": "Traduis en français : A ye malo san.",
+    "input": "",
+    "output": "Il/Elle a acheté du riz."
+  },
+  {
+    "instruction": "Traduis en français : An tɛ julakan don.",
+    "input": "",
+    "output": "Nous ne savons pas le dioula. / Nous ne connaissons pas le dioula."
+  },
+  {
+    "instruction": "Traduis en français : I ni baaraka kosɛbɛ.",
+    "input": "",
+    "output": "Merci beaucoup."
+  },
+  {
+    "instruction": "Traduis en français : Denw bɛ kalanso la.",
+    "input": "",
+    "output": "Les enfants sont à l'école."
+  },
+  {
+    "instruction": "Quelle est la différence entre 'bɛ' et 'tɛ' en dioula ?",
+    "input": "",
+    "output": "'Bɛ' est l'auxiliaire du présent affirmatif en dioula. Il exprime une action en cours ou habituelle. 'Tɛ' est son équivalent négatif. Exemple : 'Ne bɛ dumu' (je mange) et 'Ne tɛ dumu' (je ne mange pas)."
+  },
+  {
+    "instruction": "Comment forme-t-on le pluriel en dioula ?",
+    "input": "",
+    "output": "En dioula, le pluriel se forme en ajoutant le suffixe '-w' à la fin du nom. Par exemple : 'mɔgɔ' (personne) devient 'mɔgɔw' (personnes), 'so' (maison) devient 'sow' (maisons), 'den' (enfant) devient 'denw' (enfants)."
+  },
+  {
+    "instruction": "Traduis en dioula : Je vais bien, Dieu merci.",
+    "input": "",
+    "output": "N ka kɛnɛ, Ala ka baaraka."
+  },
+  {
+    "instruction": "Comment dit-on les jours de la semaine en dioula ?",
+    "input": "",
+    "output": "Les jours de la semaine en dioula sont : Alata (lundi), Tarata (mardi), Araba (mercredi), Alamisa (jeudi), Arjuma (vendredi — jour sacré), Sibiri (samedi), Kari (dimanche). Ces noms ont des origines arabes, reflétant l'influence islamique."
+  },
+  {
+    "instruction": "Traduis en dioula : La Côte d'Ivoire est mon pays.",
+    "input": "",
+    "output": "Côte d'Ivoire ye ne ka jamana ye."
+  },
+  {
+    "instruction": "Traduis en dioula : Je parle un peu le dioula.",
+    "input": "",
+    "output": "Ne bɛ julakan kumana dɔ dɔ."
+  },
+  {
+    "instruction": "Traduis en dioula : Attends-moi ici.",
+    "input": "",
+    "output": "Ne makɔnɔ yan."
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis fatigué.",
+    "input": "",
+    "output": "Gɛlɛya bɛ ne la."
+  },
+  {
+    "instruction": "Traduis en dioula : Il fait chaud aujourd'hui.",
+    "input": "",
+    "output": "Kɔɔ bɛ bi."
+  },
+  {
+    "instruction": "Traduis en dioula : Prends ça.",
+    "input": "",
+    "output": "Nin ta."
+  },
+  {
+    "instruction": "Traduis en dioula : Je reviendrai demain matin.",
+    "input": "",
+    "output": "Ne bɛna segin sini sogoma."
+  },
+  {
+    "instruction": "Traduis en dioula : Nous mangeons ensemble.",
+    "input": "",
+    "output": "An bɛ dumu ɲɔgɔn fɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Son nom est Oumar.",
+    "input": "",
+    "output": "A tɔgɔ Oumar."
+  },
+  {
+    "instruction": "Traduis en dioula : Combien coûte le riz ?",
+    "input": "",
+    "output": "Malo dɔn joli ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je travaille à Abidjan.",
+    "input": "",
+    "output": "Ne bɛ baara kɛ Abidjan."
+  },
+  {
+    "instruction": "Traduis en français : A tɔgɔ Fatoumata.",
+    "input": "",
+    "output": "Son nom est Fatoumata. / Elle s'appelle Fatoumata."
+  },
+  {
+    "instruction": "Traduis en français : Ne ka fa ye karamɔgɔ ye.",
+    "input": "",
+    "output": "Mon père est un enseignant."
+  },
+  {
+    "instruction": "Traduis en français : An bɛna taa sini.",
+    "input": "",
+    "output": "Nous irons demain."
+  },
+  {
+    "instruction": "Traduis en français : Wari bɛ a fɛ.",
+    "input": "",
+    "output": "Il/Elle a de l'argent. (Littéralement : l'argent est avec lui/elle.)"
+  },
+  {
+    "instruction": "Comment salue-t-on le matin en dioula ?",
+    "input": "",
+    "output": "Le matin, on dit 'I ni sogoma' (Bonjour). La réponse est 'Nba' ou 'Nse'. Si on veut demander comment quelqu'un va, on ajoute 'i ka kɛnɛ wa ?' (est-ce que tu vas bien ?)."
+  },
+  {
+    "instruction": "Traduis en dioula : Le dioula est une belle langue.",
+    "input": "",
+    "output": "Julakan ka ɲɛ kosɛbɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Je comprends un peu.",
+    "input": "",
+    "output": "Ne bɛ a faamu dɔ dɔ."
+  },
+  {
+    "instruction": "Traduis en dioula : Répète s'il te plaît.",
+    "input": "",
+    "output": "A fɔ tugu."
+  },
+  {
+    "instruction": "Traduis en dioula : Je viens d'Abidjan.",
+    "input": "",
+    "output": "Ne bɛ bɔ Abidjan."
+  },
+  {
+    "instruction": "Traduis en dioula : Il y a beaucoup de monde au marché.",
+    "input": "",
+    "output": "Mɔgɔw ca sugu la."
+  },
+  {
+    "instruction": "Explique la possession en dioula.",
+    "input": "",
+    "output": "En dioula, la possession se marque avec la particule 'ka' entre le possesseur et la chose possédée. Structure : Possesseur + ka + Objet. Exemples : 'ne ka so' (ma maison), 'i ka fa' (ton père), 'a ka mobili' (sa voiture), 'an ka kalanso' (notre école)."
+  },
+  {
+    "instruction": "Traduis en dioula : Il fait du commerce.",
+    "input": "",
+    "output": "A bɛ jula kɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : La nuit est tombée.",
+    "input": "",
+    "output": "Su ye na."
+  },
+  {
+    "instruction": "Traduis en dioula : Dieu est grand.",
+    "input": "",
+    "output": "Ala ka bon."
+  },
+  {
+    "instruction": "Traduis en dioula : Je t'aime.",
+    "input": "",
+    "output": "Ne kanu i."
+  },
+  {
+    "instruction": "Traduis en dioula : L'école est fermée aujourd'hui.",
+    "input": "",
+    "output": "Kalanso datugu bi."
+  },
+  {
+    "instruction": "Traduis en dioula : Je veux apprendre le dioula.",
+    "input": "",
+    "output": "Ne fɛ ka julakan kalan."
+  },
+  {
+    "instruction": "Traduis en dioula : Mon ami parle dioula très bien.",
+    "input": "",
+    "output": "Ne ka teri bɛ julakan kumana ɲɛ kosɛbɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Qu'est-ce que tu fais ?",
+    "input": "",
+    "output": "I bɛ mun kɛ ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis commerçant.",
+    "input": "",
+    "output": "Ne ye jula ye."
+  },
+  {
+    "instruction": "Traduis en dioula : Nos enfants vont à l'école.",
+    "input": "",
+    "output": "An ka denw bɛ taa kalanso la."
+  },
+  {
+    "instruction": "Traduis en français : Ne bɛ julakan kalan.",
+    "input": "",
+    "output": "J'apprends le dioula."
+  },
+  {
+    "instruction": "Traduis en français : I ka so ye ban ye ?",
+    "input": "",
+    "output": "Ta maison est grande ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Il pleut.",
+    "input": "",
+    "output": "Saan bɛ bɔ."
+  },
+  {
+    "instruction": "Traduis en dioula : J'ai besoin d'un médecin.",
+    "input": "",
+    "output": "Dotiri ka ɲini bɛ ne fɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Où es-tu ?",
+    "input": "",
+    "output": "I bɛ yɔrɔ di ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis à la maison.",
+    "input": "",
+    "output": "Ne bɛ so."
+  },
+  {
+    "instruction": "Traduis en dioula : Viens ici !",
+    "input": "",
+    "output": "Na yan !"
+  },
+  {
+    "instruction": "Traduis en dioula : Ils sont partis.",
+    "input": "",
+    "output": "U taara."
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis content.",
+    "input": "",
+    "output": "Ne nisɔndiya."
+  },
+  {
+    "instruction": "Traduis en dioula : Ne cours pas !",
+    "input": "",
+    "output": "Wulila kana kɛ !"
+  },
+  {
+    "instruction": "Traduis en dioula : Quelle heure est-il ?",
+    "input": "",
+    "output": "Waati joli bɛ sisan ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Il est midi.",
+    "input": "",
+    "output": "Tile bɛ tilancɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Nous avons mangé ensemble hier soir.",
+    "input": "",
+    "output": "An ye dumu ɲɔgɔn fɛ kunu su."
+  },
+  {
+    "instruction": "Traduis en dioula : Je n'ai pas d'argent.",
+    "input": "",
+    "output": "Wari tɛ ne fɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Le poisson est frais.",
+    "input": "",
+    "output": "Jɛgɛ kura."
+  },
+  {
+    "instruction": "Traduis en dioula : Félicitations !",
+    "input": "",
+    "output": "I ni barika !"
+  },
+  {
+    "instruction": "Traduis en dioula : Que Dieu te bénisse.",
+    "input": "",
+    "output": "Ala ka i dɛmɛ."
+  },
+  {
+    "instruction": "Comment dit-on les chiffres de 1 à 5 en dioula ?",
+    "input": "",
+    "output": "1 = kelen, 2 = fila, 3 = saba, 4 = naani, 5 = duuru."
+  },
+  {
+    "instruction": "Traduis en dioula : Je cherche la route pour Yamoussoukro.",
+    "input": "",
+    "output": "Ne bɛ sira ɲini Yamoussoukro ma."
+  },
+  {
+    "instruction": "Traduis en dioula : Parle lentement s'il te plaît.",
+    "input": "",
+    "output": "Kuma nɔgɔya."
+  },
+  {
+    "instruction": "Traduis en dioula : Tu as compris ?",
+    "input": "",
+    "output": "I ye a faamu wa ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je n'ai pas compris.",
+    "input": "",
+    "output": "Ne ma a faamu."
+  },
+  {
+    "instruction": "Traduis en dioula : Bonne nuit.",
+    "input": "",
+    "output": "Su ɲɛ."
+  },
+  {
+    "instruction": "Traduis en dioula : Ma femme est à la maison.",
+    "input": "",
+    "output": "Ne ka muso bɛ so."
+  },
+  {
+    "instruction": "Traduis en dioula : Il faut travailler.",
+    "input": "",
+    "output": "Baara kɛ ka kan."
+  },
+  {
+    "instruction": "Traduis en dioula : Donne-lui à manger.",
+    "input": "",
+    "output": "A dumuni di a ma."
+  },
+  {
+    "instruction": "Traduis en dioula : Je vends du tissu au marché.",
+    "input": "",
+    "output": "Ne bɛ fini feere sugu la."
+  },
+  {
+    "instruction": "Traduis en dioula : Ils sont revenus du village.",
+    "input": "",
+    "output": "U seginna dugu finin na."
+  },
+  {
+    "instruction": "Traduis en dioula : Mon ami est malade.",
+    "input": "",
+    "output": "Ne ka teri dimi."
+  },
+  {
+    "instruction": "Traduis en français : Ne bɛ bɔ Côte d'Ivoire.",
+    "input": "",
+    "output": "Je viens de Côte d'Ivoire."
+  },
+  {
+    "instruction": "Traduis en français : U bɛ taa Yamoussoukro.",
+    "input": "",
+    "output": "Ils vont à Yamoussoukro."
+  },
+  {
+    "instruction": "Traduis en français : A ye mobili san kura.",
+    "input": "",
+    "output": "Il/Elle a acheté une nouvelle voiture."
+  },
+  {
+    "instruction": "Traduis en français : Wari tɛ ne fɛ.",
+    "input": "",
+    "output": "Je n'ai pas d'argent."
+  },
+  {
+    "instruction": "Traduis en français : Ala ka i dɛmɛ.",
+    "input": "",
+    "output": "Que Dieu t'aide / te bénisse."
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis enseignant.",
+    "input": "",
+    "output": "Ne ye karamɔgɔ ye."
+  },
+  {
+    "instruction": "Traduis en dioula : Il est ingénieur.",
+    "input": "",
+    "output": "A ye injɛnɛri ye."
+  },
+  {
+    "instruction": "Traduis en dioula : Nous ne sommes pas au marché.",
+    "input": "",
+    "output": "An tɛ sugu la."
+  },
+  {
+    "instruction": "Traduis en dioula : Cet enfant pleure.",
+    "input": "",
+    "output": "Den nin bɛ ɲɔgɔn."
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis très heureux de te rencontrer.",
+    "input": "",
+    "output": "Ne nisɔndiya kosɛbɛ i ye."
+  },
+  {
+    "instruction": "Traduis en dioula : Bonjour",
+    "input": "",
+    "output": "I ni ce"
+  },
+  {
+    "instruction": "Traduis en dioula : Comment ça va ?",
+    "input": "",
+    "output": "I ka kènè wa ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je vais bien",
+    "input": "",
+    "output": "N ka kènè"
+  },
+  {
+    "instruction": "Traduis en dioula : Merci beaucoup",
+    "input": "",
+    "output": "I ni che kosɛbɛ"
+  },
+  {
+    "instruction": "Traduis en dioula : Je veux acheter du riz",
+    "input": "",
+    "output": "Ne bɛ dô san"
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis malade",
+    "input": "",
+    "output": "Ne kɛnɛ tɛ"
+  },
+  {
+    "instruction": "Traduis en dioula : Viens ici",
+    "input": "",
+    "output": "Na yan"
+  },
+  {
+    "instruction": "Traduis en dioula : Va à l’école",
+    "input": "",
+    "output": "Taa kalan so"
+  },
+  {
+    "instruction": "Traduis en dioula : Je suis content",
+    "input": "",
+    "output": "Ne di"
+  },
+  {
+    "instruction": "Traduis en dioula : Je vais travailler",
+    "input": "",
+    "output": "Ne bɛ baara kɛ"
+  },
+  {
+    "instruction": "Traduis en dioula : Il parle bien",
+    "input": "",
+    "output": "A bɛ fɔ di"
+  },
+  {
+    "instruction": "Traduis en dioula : Écoute-moi",
+    "input": "",
+    "output": "Mɛn ne"
+  },
+  {
+    "instruction": "Traduis en dioula : Nous allons au marché",
+    "input": "",
+    "output": "An bɛ suugu taa"
+  },
+  {
+    "instruction": "Traduis en dioula : Je veux dormir",
+    "input": "",
+    "output": "Ne bɛ sunɔ fɛ"
+  },
+  {
+    "instruction": "Traduis en dioula : Tu dois étudier",
+    "input": "",
+    "output": "I kan kalan"
+  },
+  {
+    "instruction": "Traduis en dioula : Si tu viens, je suis content",
+    "input": "",
+    "output": "Ni i na, ne di"
+  },
+  {
+    "instruction": "Traduis en dioula : L’enfant mange",
+    "input": "",
+    "output": "Den dumu"
+  },
+  {
+    "instruction": "Traduis en dioula : Où est l’eau ?",
+    "input": "",
+    "output": "Ji min bɛ ?"
+  },
+  {
+    "instruction": "Traduis en dioula : Je ne veux pas",
+    "input": "",
+    "output": "Ne tɛ fɛ"
+  },
+  {
+    "instruction": "Traduis en dioula",
+    "input": "Bonjour mon ami",
+    "output": "I ni ce, ne teriya"
+  },
+  {
+    "instruction": "Traduis en français",
+    "input": "I ka kènè wa ?",
+    "output": "Comment vas-tu ?"
+  },
+  {
+    "instruction": "Réponds en dioula",
+    "input": "Quel est ton nom ?",
+    "output": "I tɔgɔ di ?"
+  },
+  {
+    "instruction": "Complète la phrase en dioula",
+    "input": "Ne bɛ ____ (manger)",
+    "output": "Ne bɛ dumu"
+  },
+  {
+    "instruction": "Traduis en dioula",
+    "input": "Je vais au marché",
+    "output": "Ne bɛ suugu taa"
+  },
+  {
+    "instruction": "Traduis en français",
+    "input": "Ne tɛ faamu",
+    "output": "Je ne comprends pas"
+  },
+  {
+    "instruction": "Donne la forme négative",
+    "input": "Ne bɛ dumu",
+    "output": "Ne tɛ dumu"
+  },
+  {
+    "instruction": "Donne la forme interrogative",
+    "input": "I ka kènè",
+    "output": "I ka kènè wa ?"
+  },
+  {
+    "instruction": "Traduis en dioula",
+    "input": "Nous travaillons",
+    "output": "An bɛ baara kɛ"
+  },
+  {
+    "instruction": "Traduis en dioula",
+    "input": "Je veux acheter du poisson",
+    "output": "Ne bɛ jɛgɛ san"
+  },
+  {
+    "instruction": "Dialogue en dioula (marché)",
+    "input": "Acheteur demande le prix du riz",
+    "output": "A: Dô jɔgɔ ye ?\nB: A ye 500 franc\nA: A tɛ kɛ, dimi kɛ"
+  },
+  {
+    "instruction": "Dialogue en dioula (salutation)",
+    "input": "Rencontre entre deux personnes",
+    "output": "A: I ni ce\nB: I ni ce\nA: I ka kènè wa ?\nB: N ka kènè"
+  },
+  {
+    "instruction": "Exprime une émotion en dioula",
+    "input": "Je suis heureux",
+    "output": "Ne di"
+  },
+  {
+    "instruction": "Exprime une émotion en dioula",
+    "input": "Je suis fatigué",
+    "output": "Ne gɛlɛya"
+  },
+  {
+    "instruction": "Donne un ordre en dioula",
+    "input": "Viens ici",
+    "output": "Na yan"
+  },
+  {
+    "instruction": "Donne un ordre en dioula",
+    "input": "Écoute-moi",
+    "output": "Mɛn ne"
+  },
+  {
+    "instruction": "Traduis en dioula (finance)",
+    "input": "Je veux investir de l'argent",
+    "output": "Ne bɛ wari don"
+  },
+  {
+    "instruction": "Traduis en dioula (business)",
+    "input": "Mon entreprise grandit",
+    "output": "Ne ka baara so bɔya"
+  },
+  {
+    "instruction": "Traduis en dioula (sport)",
+    "input": "Mon équipe a gagné",
+    "output": "Ne ka kulu se"
+  },
+  {
+    "instruction": "Corrige la phrase",
+    "input": "Ne dumu bɛ",
+    "output": "Ne bɛ dumu"
+  },
+  {
+    "instruction": "Réorganise la phrase (SOV)",
+    "input": "Ne bɛ taa suugu",
+    "output": "Ne suugu taa"
+  },
+  {
+    "instruction": "Explique la phrase",
+    "input": "Ne ye dô dumu",
+    "output": "Phrase au passé : 'ye' indique que l'action est accomplie. Structure : Sujet + ye + Objet + Verbe"
+  },
+  {
+    "instruction": "Génère une phrase en dioula",
+    "input": "utilise le verbe 'kalan'",
+    "output": "Ne bɛ kalan"
+  },
+  {
+    "instruction": "Génère une phrase en dioula",
+    "input": "utilise 'wari'",
+    "output": "Ne bɛ wari sɔrɔ"
+  },
+  {
+    "instruction": "Traduction bidirectionnelle",
+    "input": "Je vais dormir",
+    "output": "Ne bɛ sunɔ"
+  },
+  {
+    "instruction": "Traduction bidirectionnelle",
+    "input": "A bɛ fɔ",
+    "output": "Il parle"
+  },
+  {
+    "instruction": "Compréhension",
+    "input": "Que signifie 'bɛ' en dioula ?",
+    "output": "Marqueur aspectuel : présent, futur proche ou action en cours. Ex: Ne bɛ dumu = Je mange"
+  },
+  {
+    "instruction": "Compréhension",
+    "input": "Que signifie 'tɛ' ?",
+    "output": "Marqueur de négation au présent. Ex: Ne tɛ dumu = Je ne mange pas"
+  },
+  {
+    "instruction": "Créer une phrase complexe",
+    "input": "Si tu viens, je mange",
+    "output": "Ni i na, ne bɛ dumu"
+  },
+  {
+    "instruction": "Créer une phrase complexe",
+    "input": "Je vais étudier pour réussir",
+    "output": "Ne bɛ taa ka kalan ka se"
+  }
+]

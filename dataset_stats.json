@@ -1,0 +1,19 @@
+{
+  "total_paires_brutes": 965,
+  "doublons_supprimes": 3,
+  "total_paires_uniques": 962,
+  "split": {
+    "train": 769,
+    "valid": 96,
+    "test": 97
+  },
+  "par_source": {
+    "alpaca_original": 169,
+    "vocabulaire": 668,
+    "grammaire": 56,
+    "conversation": 69
+  },
+  "format": "ChatML (Llama 3.x)",
+  "modele_cible": "meta-llama/Llama-3.2-3B-Instruct",
+  "framework": "mlx-lm"
+}
