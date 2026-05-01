@@ -74,7 +74,8 @@ def build_prompt(tokenizer, text):
 
 
 def generate(model, tokenizer, prompt_text, max_new_tokens=80):
-    inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
+    device = next(model.parameters()).device
+    inputs = tokenizer(prompt_text, return_tensors="pt").to(device)
     with torch.no_grad():
         out = model.generate(
             **inputs,
@@ -154,8 +155,8 @@ def main():
     )
 
     if not args.no_adapter:
+        # On NE merge PAS : merger LoRA dans un modèle 4-bit corrompt les poids
         model = PeftModel.from_pretrained(model, args.adapter)
-        model = model.merge_and_unload()
 
     model.eval()
     print(f"✅ Chargé en {time.time()-t0:.1f}s\n")
